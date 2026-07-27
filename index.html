@@ -10,7 +10,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="ماڵپەڕی فەرمی Sabah Sat - پێشکەشکردنی خزمەتگوزاری چاککردنەوەی مۆبایل، بەستنی سیستەمی سەتەلایت لە بەردەڕەش و دەوروبەری، گەڕاندنەوەی سۆشیال میدیا و ئاسایشی سایبەری.">
-    <meta name="keywords" content="Sabah Sat, سابان سەت, بەردەڕەش, سەتەلایت بەردەڕەش, چاککردنەوەی مۆبایل, هاککردن, ئاسایشی سایبەری, فۆرمی حەج, دروستکردنی ئەپل ئایدی">
+    <meta name="keywords" content="Sabah Sat, سابان سەت, بەردەڕەش, سەتەلایت بەردەڕەش, چاککردنەوەی مۆبایل, کاتی کارکردن, ئاسایشی سایبەری, فۆرمی حەج, دروستکردنی ئەپل ئایدی">
     <meta name="author" content="Sabah Sat">
     
     <!-- Open Graph / Social Media Sharing Tags -->
@@ -474,6 +474,87 @@
             text-decoration: none;
         }
 
+        /* Working Hours Section Style */
+        .working-hours-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .hours-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(3, 7, 18, 0.95));
+            border: 1px solid var(--accent-glow);
+            border-radius: 12px;
+            padding: 15px 18px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+            text-align: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        .hours-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.25);
+            padding-bottom: 8px;
+        }
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-color);
+        }
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(16, 185, 129, 0.15);
+        }
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+        .hours-day {
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+        .hours-time {
+            color: var(--accent-glow);
+            direction: ltr;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-glow);
+            margin-top: 10px;
+        }
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse-dot 1.5s infinite;
+        }
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+            100% { transform: scale(0.95); opacity: 1; }
+        }
+
         .cyber-tip-section {
             width: 100%;
             max-width: 450px;
@@ -663,50 +744,6 @@
         .read-more-btn:hover {
             background: rgba(16, 185, 129, 0.3);
             color: #fff;
-        }
-
-        /* Testimonials Section Styling */
-        .testimonials-section {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 25px auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-        .testimonial-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 12px;
-            backdrop-filter: blur(5px);
-            text-align: inherit;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(16, 185, 129, 0.8);
-            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
-        }
-        .testimonial-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-        .testimonial-name {
-            font-size: 12px;
-            font-weight: bold;
-            color: var(--accent-glow);
-        }
-        .testimonial-stars {
-            color: #f59e0b;
-            font-size: 10px;
-        }
-        .testimonial-text {
-            font-size: 11px;
-            color: var(--text-color);
-            line-height: 1.5;
         }
 
         /* FAQ Section Styling */
@@ -1238,6 +1275,30 @@
             <span class="red-ad-text" style="font-size: 13px;">Sabah Sat</span> - <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="heroDesc">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.</span>
         </p>
 
+        <!-- Working Hours Section -->
+        <div class="working-hours-section">
+            <div class="hours-card">
+                <div class="hours-header">
+                    <i class="fas fa-clock"></i>
+                    <span data-i18n="hoursTitle">کاتی کارکردن (Working Hours)</span>
+                </div>
+                <div class="hours-list">
+                    <div class="hours-item">
+                        <span class="hours-day" data-i18n="daySatThu">شەممە - پێنجشەممە:</span>
+                        <span class="hours-time">08:00 AM - 09:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day" data-i18n="dayFri">هەینی:</span>
+                        <span class="hours-time">02:00 PM - 09:00 PM</span>
+                    </div>
+                </div>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span data-i18n="statusOpen">ئامادەین بۆ پێشوازیکردنتان</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Cyber Tip Section -->
         <div class="cyber-tip-section">
             <div class="cyber-tip-card">
@@ -1355,22 +1416,6 @@
             </div>
         </div>
 
-        <!-- Testimonials Section -->
-        <div class="testimonials-section">
-            <div class="extra-title">
-                <i class="fas fa-comments"></i> 
-                <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="testTitle">بۆچوون و ڕای کڕیاران (Testimonials)</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <span class="testimonial-name" data-i18n="t1Name">ئارام بەردەڕەشی</span>
-                    <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                </div>
-                <div class="testimonial-text" data-i18n="t1Text">"دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!"</div>
-            </div>
-        </div>
-
         <!-- FAQ Section -->
         <div class="faq-section">
             <div class="extra-title">
@@ -1384,7 +1429,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer" data-i18n="faq1A">
-                    لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانمانەوە بە زووترین کات دەگەڕێندرێتەوە.
+                    لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانەوە بە زووترین کات دەگەڕێندرێتەوە.
                 </div>
             </div>
         </div>
@@ -1476,6 +1521,10 @@
                 heroBadge: "پەخش و سیستەمی سایبەری",
                 heroSub: "کاری موبایل و سەتەلایت & ئاسایشی سایبەری",
                 heroDesc: "Sabah Sat - پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.",
+                hoursTitle: "کاتی کارکردن (Working Hours)",
+                daySatThu: "شەممە - پێنجشەممە:",
+                dayFri: "هەینی:",
+                statusOpen: "ئامادەین بۆ پێشوازیکردنتان",
                 tipHeader: "ئامۆژگاری سایبەری ڕۆژانە (Cyber Tip of the Day)",
                 tipStrong: "ئامۆژگاری:",
                 tipContent: "هیچ کاتێک کۆدی پشتڕاستکردنەوەی (OTP) تەلەگرام یان واتسئەپەکەت مەدە بە هیچ کەسێک، تەنانەت ئەگەر وای پیشان بدەن کە هاوڕێ یان کارمەندی کۆمپانیان.",
@@ -1499,12 +1548,9 @@
                 news1Title: "هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟",
                 news1Desc: "ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان. بۆ خوێندنەوەی ڕاپۆرتی تەواو و وردەکارییەکانی کرتە بکە.",
                 readMoreBtn: "خوێندنەوەی ڕاپۆرتی تەواو",
-                testTitle: "بۆچوون و ڕای کڕیاران (Testimonials)",
-                t1Name: "ئارام بەردەڕەشی",
-                t1Text: "\"دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!\"",
                 faqTitle: "پرسیارە دووبارەبووەکەکان (FAQ)",
                 faq1Q: "چۆن دەتوانم ئەکاونتی فەیسبوک یان سناپچاتم بگێڕمەوە?",
-                faq1A: "لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانمانەوە بە زووترین کات دەگەڕێندرێتەوە.",
+                faq1A: "لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانەوە بە زووترین کات دەگەڕێندرێتەوە.",
                 emailTitle: "ناردنی نامە یان ئیمیل",
                 emailDesc: "گەر پرسیارێک یان داواکارییەک هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە ڕاستەوخۆ نامەکەت بنێریت.",
                 formName: "ناوی تۆ:",
@@ -1542,6 +1588,10 @@
                 heroBadge: "البث والأنظمة السيبرانية",
                 heroSub: "خدمات الهواتف والستلايت والأمن السيبراني",
                 heroDesc: "Sabah Sat - تقديم أفضل الخدمات للهواتف، أنظمة الستلايت والحماية الرقمية.",
+                hoursTitle: "ساعات العمل (Working Hours)",
+                daySatThu: "السبت - الخميس:",
+                dayFri: "الجمعة:",
+                statusOpen: "جاهزون لاستقبالكم",
                 tipHeader: "النصيحة السيبرانية اليومية (Cyber Tip of the Day)",
                 tipStrong: "نصيحة:",
                 tipContent: "لا تعطِ أبداً رمز التحقق (OTP) الخاص بتليجرام أو واتساب لأي شخص، حتى لو ادعوا أنهم أصدقاء أو موظفو شركة.",
@@ -1565,9 +1615,6 @@
                 news1Title: "التوعية بالأمن السيبراني: كيف تحمي هاتفك وحساباتك من الاختراق؟",
                 news1Desc: "إرشادات ذهبية لتفعيل المصادقة الثنائية وتجنب الروابط الوهمية. انقر لقراءة التقرير الكامل.",
                 readMoreBtn: "قراءة التقرير الكامل",
-                testTitle: "آراء وتقييمات العملاء (Testimonials)",
-                t1Name: "أرام بردرشي",
-                t1Text: "\"عاشت إيدك يا صباح، نظام الستلايت الذي ربطته لنا يعمل بشكل نظيف وبدون مشاكل في قريتنا. بالتوفيق!\"",
                 faqTitle: "الأسئلة الشائعة (FAQ)",
                 faq1Q: "كيف يمكنني استعادة حساب الفيسبوك أو السناب شات الخاص بي؟",
                 faq1A: "من خلال الاتصال بنا والتوجيهات الأمنية التي نقدمها، سيتم استعادته بأسرع وقت.",
@@ -1608,6 +1655,10 @@
                 heroBadge: "Broadcasting & Cyber Systems",
                 heroSub: "Mobile & Satellite Work & Cyber Security",
                 heroDesc: "Sabah Sat - Providing the best services for mobile work, satellite systems, and digital protection.",
+                hoursTitle: "Working Hours",
+                daySatThu: "Saturday - Thursday:",
+                dayFri: "Friday:",
+                statusOpen: "Ready to welcome you",
                 tipHeader: "Cyber Tip of the Day",
                 tipStrong: "Tip:",
                 tipContent: "Never give your Telegram or WhatsApp OTP verification code to anyone, even if they pretend to be friends or company staff.",
@@ -1631,9 +1682,6 @@
                 news1Title: "Cyber Security Awareness: How to Protect Your Phone and Accounts from Hacking?",
                 news1Desc: "Golden guidelines for enabling 2FA and avoiding phishing links. Click to read the full report.",
                 readMoreBtn: "Read Full Report",
-                testTitle: "Customer Reviews (Testimonials)",
-                t1Name: "Aram Bardarashi",
-                t1Text: "\"Thank you Sabah, the satellite system you installed works very clean and flawless in our village. Good luck!\"",
                 faqTitle: "Frequently Asked Questions (FAQ)",
                 faq1Q: "How can I recover my Facebook or Snapchat account?",
                 faq1A: "By contacting us and following our security guidelines, it will be restored as soon as possible.",
