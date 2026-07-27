@@ -68,7 +68,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Advanced Cyber Security Matrix Background Effect */
         .background {
             position: fixed;
             top: 0;
@@ -112,7 +111,6 @@
             100% { background-position: 0 2000px; }
         }
 
-        /* Navbar Styling */
         nav {
             display: flex;
             justify-content: space-between;
@@ -291,7 +289,6 @@
             flex-shrink: 0;
         }
 
-        /* Quick Notice / Marquee Ticker Styling */
         .cyber-ticker-container {
             width: 100%;
             max-width: 500px;
@@ -422,7 +419,6 @@
             text-decoration: none;
         }
 
-        /* Cyber Tip of the Day Section Styling */
         .cyber-tip-section {
             width: 100%;
             max-width: 450px;
@@ -517,108 +513,6 @@
             font-size: 13px;
             color: var(--text-color);
             line-height: 1.6;
-        }
-
-        /* Testimonials Section Styling */
-        .testimonials-section {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 30px auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-            direction: rtl;
-        }
-        .testimonial-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            backdrop-filter: blur(5px);
-            text-align: right;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(16, 185, 129, 0.8);
-            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
-        }
-        .testimonial-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        .testimonial-name {
-            font-size: 13px;
-            font-weight: bold;
-            color: var(--accent-glow);
-        }
-        .testimonial-stars {
-            color: #f59e0b;
-            font-size: 11px;
-        }
-        .testimonial-text {
-            font-size: 12px;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* FAQ Section Styling (Interactive Accordion) */
-        .faq-section {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto 30px auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-            direction: rtl;
-        }
-        .faq-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            backdrop-filter: blur(5px);
-            overflow: hidden;
-            transition: border-color 0.3s ease;
-        }
-        .faq-card:hover {
-            border-color: rgba(16, 185, 129, 0.8);
-        }
-        .faq-question {
-            padding: 15px 18px;
-            font-size: 13px;
-            font-weight: bold;
-            color: var(--accent-glow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            gap: 10px;
-            user-select: none;
-        }
-        .faq-question i {
-            transition: transform 0.3s ease;
-            font-size: 11px;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 18px;
-            font-size: 12px;
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            background: rgba(3, 7, 18, 0.3);
-            border-top: 1px solid transparent;
-        }
-        .faq-card.active .faq-answer {
-            max-height: 150px;
-            padding: 12px 18px 15px 18px;
-            border-top-color: rgba(16, 185, 129, 0.15);
-        }
-        .faq-card.active .faq-question i {
-            transform: rotate(180deg);
         }
 
         .news-section {
@@ -717,6 +611,108 @@
         .read-more-btn:hover {
             background: rgba(16, 185, 129, 0.3);
             color: #fff;
+        }
+
+        /* Testimonials Section Styling */
+        .testimonials-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(16, 185, 129, 0.8);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
+        }
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .testimonial-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+        }
+        .testimonial-stars {
+            color: #f59e0b;
+            font-size: 11px;
+        }
+        .testimonial-text {
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .faq-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .faq-card:hover {
+            border-color: rgba(16, 185, 129, 0.8);
+        }
+        .faq-question {
+            padding: 15px 18px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+            user-select: none;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+            font-size: 11px;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 18px;
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(3, 7, 18, 0.3);
+            border-top: 1px solid transparent;
+        }
+        .faq-card.active .faq-answer {
+            max-height: 150px;
+            padding: 12px 18px 15px 18px;
+            border-top-color: rgba(16, 185, 129, 0.15);
+        }
+        .faq-card.active .faq-question i {
+            transform: rotate(180deg);
         }
 
         .report-modal-overlay {
@@ -1085,16 +1081,13 @@
     </style>
 </head>
 <body data-theme="dark">
-    <!-- Cyber Security Background Layers -->
     <div class="background">
         <div class="network-lines"></div>
         <div class="cyber-radar"></div>
     </div>
 
-    <!-- Background Dark Overlay for Menu -->
     <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
-    <!-- Full Report Modal Popup -->
     <div class="report-modal-overlay" id="reportModal">
         <div class="report-modal-content">
             <div class="report-close-btn" onclick="closeReportModal()">
@@ -1156,13 +1149,12 @@
     <nav>
         <div class="nav-left">
             <div class="logo-container">
-                <img src="1785164280697.jpg" alt="Sabah Sat Logo" class="logo-img">
+                <img src="1785164280697.png" alt="Sabah Sat Logo" class="logo-img">
                 <div class="red-ad-text" style="font-size: 16px;">Sabah Sat</div>
             </div>
         </div>
 
         <div class="nav-actions">
-            <!-- Theme Toggle Button -->
             <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="گۆڕینی دۆخی ڕووناک/تاریک">
                 <i class="fas fa-moon" id="themeIcon"></i>
             </button>
@@ -1187,7 +1179,7 @@
         </div>
     </nav>
 
-    <!-- Quick Notice / Marquee Ticker Section -->
+    <!-- Quick Notice Ticker -->
     <div class="cyber-ticker-container">
         <div class="cyber-ticker">
             <div class="ticker-badge">
@@ -1217,7 +1209,7 @@
             <span class="red-ad-text" style="font-size: 14px;">Sabah Sat</span> - <span class="cyber-ad-text" style="font-size: 14px;">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.</span>
         </p>
 
-        <!-- Cyber Tip of the Day Section -->
+        <!-- Cyber Tip Section -->
         <div class="cyber-tip-section">
             <div class="cyber-tip-card">
                 <div class="cyber-tip-header">
@@ -1240,6 +1232,7 @@
             </a>
         </div>
 
+        <!-- Services Section -->
         <div class="extra-services-section" id="servicesSection">
             <div class="extra-title">
                 <i class="fas fa-concierge-bell"></i> <span class="cyber-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
@@ -1306,6 +1299,7 @@
             </div>
         </div>
 
+        <!-- News Section -->
         <div class="news-section" id="newsSection">
             <div class="news-title">
                 <i class="fas fa-fire"></i> 
@@ -1437,6 +1431,7 @@
             </div>
         </div>
 
+        <!-- Posts Section -->
         <div class="posts-section">
             <div class="posts-title">
                 <i class="fas fa-bullhorn"></i> 
@@ -1450,6 +1445,7 @@
             </div>
         </div>
 
+        <!-- Email Form Section -->
         <div class="email-section">
             <div class="posts-title" style="margin-bottom: 12px;">
                 <i class="fas fa-envelope"></i> 
@@ -1480,6 +1476,7 @@
             </div>
         </div>
 
+        <!-- Social Media Links -->
         <div class="socials">
             <a href="https://www.tiktok.com/@saba_sat?_r=1&_t=ZS-98MvpZKH61P" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/share/1BYZ1ANDXa/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
