@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabah Sat - Portfolio</title>
+    <!-- FontAwesome Library for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Importing Monospace Font */
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
+
+        /* Default Dark Theme Variables */
+        :root {
+            --bg-color: #05030f;
+            --text-color: #c8d3f5;
+            --nav-bg: rgba(5, 3, 15, 0.9);
+            --card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(15, 12, 35, 0.85));
+            --card-solid: rgba(15, 12, 35, 0.7);
+            --border-color: rgba(30, 144, 255, 0.3);
+            --heading-color: #e2e8f0;
+            --subheading-color: #a0aec0;
+            --desc-color: #94a3b8;
+            --input-bg: rgba(5, 3, 15, 0.8);
+            --popup-bg: rgba(8, 6, 18, 0.95);
+            --dropdown-bg: #080612;
+            --extra-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.12), rgba(15, 12, 35, 0.8));
+            --email-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(15, 12, 35, 0.9));
+            --net-line-1: rgba(255,255,255,0.02);
+            --net-line-2: rgba(255,255,255,0.02);
+            --radial-1: rgba(75, 82, 138, 0.08);
+            --radial-2: rgba(75, 82, 138, 0.08);
+        }
+
+        /* Light Theme Variables */
+        [data-theme="light"] {
+            --bg-color: #f0f4f8;
+            --text-color: #2d3748;
+            --nav-bg: rgba(240, 244, 248, 0.9);
+            --card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.06), rgba(255, 255, 255, 0.9));
+            --card-solid: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(30, 144, 255, 0.3);
+            --heading-color: #1a202c;
+            --subheading-color: #4a5568;
+            --desc-color: #4a5568;
+            --input-bg: rgba(255, 255, 255, 0.9);
+            --popup-bg: rgba(255, 255, 255, 0.98);
+            --dropdown-bg: #ffffff;
+            --extra-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.08), rgba(255, 255, 255, 0.95));
+            --email-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.08), rgba(255, 255, 255, 0.95));
+            --net-line-1: rgba(0,0,0,0.03);
+            --net-line-2: rgba(0,0,0,0.03);
+            --radial-1: rgba(30, 144, 255, 0.05);
+            --radial-2: rgba(0, 191, 255, 0.05);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Fira Code', monospace;
+            height: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Abstract Network Background Effect */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                radial-gradient(circle at 15% 50%, var(--radial-1), transparent 35%),
+                radial-gradient(circle at 85% 30%, var(--radial-2), transparent 35%);
+            z-index: -1;
+            transition: background-image 0.3s ease;
+        }
+        .network-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--net-line-1) 1px, transparent 1px), 
+                linear-gradient(90deg, var(--net-line-2) 1px, transparent 1px);
+            background-size: 80px 80px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Navbar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--nav-bg);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 101;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-circle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid #1e90ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1e90ff;
+            animation: pulse-border 2s infinite;
+        }
+        
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(30, 144, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+        }
+
+        /* Special Blue & White Ad Animation (سپی و شینی جووڵاو) */
+        .blue-white-ad-text {
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            background: linear-gradient(90deg, #1e90ff, #0056b3, #00bfff, #0056b3, #1e90ff);
+            background-size: 300% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite, float-text 2s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        /* Special Red Animated Ad Text for Contact Button */
+        .red-ad-text {
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ff0000, #cc0000, #ff4d4d, #cc0000, #ff0000);
+            background-size: 300% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite, float-text 2s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 300% center;
+            }
+        }
+
+        @keyframes float-text {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-3px); }
+        }
+
+        /* Theme Toggle Button & Menu Actions */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(30, 144, 255, 0.15);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00bfff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover {
+            background: rgba(30, 144, 255, 0.3);
+            color: #fff;
+            transform: rotate(20deg);
+        }
+        
+        /* Menu / Settings Button Styling */
+        .menu-container {
+            position: relative;
+        }
+        .menu-settings {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 144, 255, 0.15);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            padding: 8px 14px;
+            border-radius: 20px;
+            color: #00bfff;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .menu-settings:hover {
+            background: rgba(30, 144, 255, 0.3);
+            color: #fff;
+        }
+
+        /* Dropdown Menu Overlay / Background Block */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(3, 2, 8, 0.6);
+            backdrop-filter: blur(5px);
+            display: none;
+            z-index: 99;
+        }
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 300px;
+            background: var(--dropdown-bg);
+            border: 1px solid rgba(30, 144, 255, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            display: none;
+            flex-direction: column;
+            padding: 10px 0;
+            z-index: 102;
+            direction: rtl;
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: background 0.3s ease;
+        }
+        .dropdown-menu.active {
+            display: flex;
+        }
+        .dropdown-item {
+            padding: 12px 15px;
+            color: var(--text-color);
+            font-size: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+        .dropdown-item:hover {
+            background: rgba(30, 144, 255, 0.25);
+            color: #00bfff;
+        }
+        .dropdown-item i {
+            color: #1e90ff;
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 70px;
+        }
+
+        .badge {
+            background-color: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.4);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.15);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 10px 0;
+            color: var(--heading-color);
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 5px 0 25px 0;
+            color: var(--subheading-color);
+        }
+
+        p.description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--desc-color);
+            max-width: 380px;
+            margin-bottom: 35px;
+            direction: rtl;
+        }
+
+        /* Buttons Styling */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: white;
+        }
+        .btn-contact {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(20, 15, 30, 0.9));
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-contact:hover {
+            border-color: rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+        }
+        .btn-project {
+            background: transparent;
+            border: 1px solid rgba(30, 144, 255, 0.4);
+            color: #00bfff;
+        }
+
+        /* Additional Services Section Styling */
+        .extra-services-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .extra-title {
+            font-size: 15px;
+            color: var(--heading-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .extra-title i {
+            color: #1e90ff;
+        }
+        .extra-card {
+            background: var(--extra-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 18px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .extra-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(30, 144, 255, 0.75);
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.2);
+        }
+        .extra-card-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .extra-card-desc {
+            font-size: 13px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Tech News Section with Images */
+        .news-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+            scroll-margin-top: 90px;
+        }
+        .news-title {
+            font-size: 15px;
+            color: var(--heading-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .news-title i {
+            color: #1e90ff;
+        }
+        .news-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 144, 255, 0.8);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.15);
+        }
+
+        .news-img-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .news-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .news-card:hover .news-img-container img {
+            transform: scale(1.05);
+        }
+        .news-content-box {
+            padding: 15px 18px;
+        }
+        .news-card-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00bfff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .news-card-desc {
+            font-size: 13px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .news-date {
+            font-size: 11px;
+            color: #1e90ff;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* Daily Posts Section Styling */
+        .posts-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .posts-title {
+            font-size: 15px;
+            color: var(--heading-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .posts-title i {
+            color: #1e90ff;
+        }
+        .post-card {
+            background: var(--card-solid);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: background 0.3s ease;
+        }
+        .post-date {
+            font-size: 11px;
+            color: #1e90ff;
+            margin-bottom: 6px;
+        }
+        .post-content {
+            font-size: 13px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Email Form Section Styling */
+        .email-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .email-card {
+            background: var(--email-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: background 0.3s ease;
+        }
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: right;
+        }
+        .form-group label {
+            font-size: 12px;
+            color: #00bfff;
+        }
+        .form-control {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: var(--text-color);
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            outline: none;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .form-control:focus {
+            border-color: #1e90ff;
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 90px;
+        }
+        .btn-send {
+            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s, transform 0.2s;
+            margin-top: 5px;
+        }
+        .btn-send:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Social Icons Styling */
+        .socials {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background-color: transparent;
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon.fb { background-color: #1877f2; border: none; }
+        .social-icon.yt { background-color: #ff0000; border: none; }
+        .social-icon.ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border: none;
+        }
+        .social-icon.tg { background-color: #229ED9; border: none; }
+
+        /* Floating Contact Widget Styling (دوگمەی مەلەفی پەیوەندی خێرا) */
+        .floating-widget-container {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1000;
+            direction: rtl;
+        }
+
+        .floating-main-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            color: white;
+            border: none;
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+            animation: float-pulse 2s infinite;
+        }
+
+        .floating-main-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.8);
+        }
+
+        @keyframes float-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(30, 144, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+        }
+
+        .floating-popup {
+            position: absolute;
+            bottom: 75px;
+            left: 0;
+            width: 240px;
+            background: var(--popup-bg);
+            border: 1px solid rgba(30, 144, 255, 0.4);
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.3s ease;
+        }
+
+        .floating-popup.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-popup-title {
+            font-size: 11px;
+            color: #00bfff;
+            padding: 4px 8px;
+            border-bottom: 1px solid rgba(30, 144, 255, 0.2);
+            margin-bottom: 4px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .floating-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 12px;
+            background: rgba(30, 144, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .floating-item:hover {
+            background: rgba(30, 144, 255, 0.25);
+            color: #00bfff;
+            transform: translateX(-3px);
+        }
+
+        .floating-item.tg i { color: #229ED9; }
+        .floating-item.wa i { color: #25D366; }
+        .floating-item.call i { color: #ff4d4d; }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #1e90ff;
+            font-size: 13px;
+            gap: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="background">
+        <div class="network-lines"></div>
+    </div>
+
+    <!-- Background Dark Overlay for Menu -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <div class="logo-container">
+                <div class="logo-circle">SS</div>
+                <div class="blue-white-ad-text" style="font-size: 16px;">Sabah Sat</div>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="گۆڕینی دۆخی ڕووناک/تاریک">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+
+            <div class="menu-container">
+                <div class="menu-settings" onclick="toggleMenu()">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>سێتینگ</span>
+                </div>
+                
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#" class="dropdown-item"><i class="fas fa-mobile-alt"></i> چاککردنەوەی مۆبایل</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-satellite-dish"></i> سیستەمی سەتەلایت</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-map-marked-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-shield-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-user-plus"></i> <span class="blue-white-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-exchange-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-user-friends"></i> <span class="blue-white-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-file-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <div class="hero">
+        <div class="badge">
+            <span class="blue-white-ad-text">بەخێربێیت بۆ پڕۆفایلەکەم</span>
+        </div>
+
+        <h1>Hi, I'm <span class="blue-white-ad-text" style="font-size: 26px;">Sabah Sat</span></h1>
+        
+        <h2>
+            <span class="blue-white-ad-text" style="font-size: 18px;">کاری موبایل و سەتەلایت</span>
+        </h2>
+
+        <p class="description">
+            <span class="blue-white-ad-text" style="font-size: 14px;">Sabah Sat</span> - <span class="blue-white-ad-text" style="font-size: 14px;">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و خزمەتگوزارییە گشتییەکان.</span>
+        </p>
+
+        <div class="buttons">
+            <a href="tel:+9647507570731" class="btn btn-contact">
+                <i class="fas fa-phone" style="color: #ff4d4d;"></i> 
+                <span class="red-ad-text" style="font-size: 13px;">پەیوەندیکردن</span>
+            </a>
+            <a href="#" class="btn btn-project">
+                <i class="fas fa-mobile-alt"></i> & <i class="fas fa-satellite-dish"></i> کاری مۆبایل و سەتەلایت
+            </a>
+        </div>
+
+        <!-- بەشی خزمەتگوزارییە زیادکراوەکان -->
+        <div class="extra-services-section">
+            <div class="extra-title">
+                <i class="fas fa-concierge-bell"></i> <span class="blue-white-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-satellite-dish"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 14px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span>
+                </div>
+                <div class="extra-card-desc">
+                    خزمەتگوزاری خێرا و پیشەگەر بۆ دانان، ڕێکخستن و بەستنی سیستەمی سەتەلایت و دیش لە سەرجەم گوندەکان و ناوچەکانی بەردەڕەش و دەوروبەری بە باشترین کوالێتی.
+                </div>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-unlock-alt"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 14px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
+                </div>
+                <div class="extra-card-desc">
+                    گەڕاندنەوەی ئەکاونتە هاککراو، گیراو یان لەدەستچووەکان بە زووترین کات و بە پارێزراوی تەواو بۆ هاوڵاتییانی خۆشەویست.
+                </div>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-envelope-open-text"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 13px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span>
+                </div>
+                <div class="extra-card-desc">
+                    ئامادەین بۆ دروستکردن و دامەزراندنی هەژماری فەرمی و نوێ (جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چات) بە شێوازێکی زامنکراو، پارێزراو و بە ڕەچاوکردنی تەواوی مەرجەکانی ئاسایش بۆ مۆبایلەکەت.
+                </div>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-child"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 14px;">نەقل کردن و زیادکردنی منداڵ</span>
+                </div>
+                <div class="extra-card-desc">
+                    ئەنجامدانی مامەڵەی گواستنەوەی (نەقل کردن) و زیادکردنی ناوی منداڵ بۆ سەر فۆرمی خۆراک بە شێوەیەکی ورد و دروست.
+                </div>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-user-plus"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 14px;">جیاکردنەوەی هاوسەری نوێ</span>
+                </div>
+                <div class="extra-card-desc">
+                    ئامادەکاریکردن و جیاکردنەوەی فۆرمی خۆراک بۆ هاوسەرانی نوێ بە هەموو ڕێکارە یاسایی و کارگێڕییە پێویستەکانەوە.
+                </div>
+            </div>
+
+            <div class="extra-card">
+                <div class="extra-card-title">
+                    <i class="fas fa-kaaba"></i> 
+                    <span class="blue-white-ad-text" style="font-size: 14px;">پڕکردنەوەی فۆرمی حەج</span>
+                </div>
+                <div class="extra-card-desc">
+                    ئامادەین بۆ پڕکردنەوەی ورد و دروستی فۆرمی حەج بۆ هاوڵاتییانی خۆشەویست.
+                </div>
+            </div>
+        </div>
+
+        <!-- بەشی هەواڵ و بابەتە سەرنجڕاکێشەکان -->
+        <div class="news-section" id="newsSection">
+            <div class="news-title">
+                <i class="fas fa-fire"></i> 
+                <span class="blue-white-ad-text" style="font-size: 15px;">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
+            </div>
+
+            <div class="news-card" id="newsCard1">
+                <div class="news-img-container">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="MyTv+ Sports Streaming">
+                </div>
+                <div class="news-content-box">
+                    <span class="news-date">کەناڵە وەرزشییەکان و یارییەکان</span>
+                    <div class="news-card-title">
+                        <i class="fas fa-tv"></i> 
+                        <span class="blue-white-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span>
+                    </div>
+                    <div class="news-card-desc">
+                        <span class="blue-white-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card" id="newsCard2">
+                <div class="news-img-container">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cyber Security">
+                </div>
+                <div class="news-content-box">
+                    <span class="news-date">تەکنەلۆژیا و ئاسایشی دیجیتاڵی</span>
+                    <div class="news-card-title">
+                        <i class="fas fa-shield-alt"></i> 
+                        <span class="blue-white-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
+                    </div>
+                    <div class="news-card-desc">
+                        <span class="blue-white-ad-text" style="font-size: 13px;">ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication) و دوورکەوتنەوە لە لینکە فێڵبازەکان بۆ پاراستنی تەواوی زانیارییە کەسییەکانت.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card" id="newsCard3">
+                <div class="news-img-container">
+                    <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=800&q=80" alt="Starlink Satellite">
+                </div>
+                <div class="news-content-box">
+                    <span class="news-date">شۆڕشی ئینتەرنێتی ئاسمانی</span>
+                    <div class="news-card-title">
+                        <i class="fas fa-satellite"></i> 
+                        <span class="blue-white-ad-text" style="font-size: 14px;">ستارلینک (Starlink): گۆڕانکاری گەورە لە خێرایی و گەیشتن بە ئینتەرنێت لە ناوچە دوورەدەستەکان</span>
+                    </div>
+                    <div class="news-card-desc">
+                        <span class="blue-white-ad-text" style="font-size: 13px;">چۆنیەتی کارکردنی مانگە دەستکردەکانی ئینتەرنێت و دابینکردنی هێڵی خێرا و بێپچڕان لە دەرەوەی شارەکان و گوندەکاندا.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card" id="newsCard4">
+                <div class="news-img-container">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Fastlink Internet">
+                </div>
+                <div class="news-content-box">
+                    <span class="news-date">تۆڕەکانی پەیوەندی و ئینتەرنێت</span>
+                    <div class="news-card-title">
+                        <i class="fas fa-wifi"></i> 
+                        <span class="blue-white-ad-text" style="font-size: 14px;">دوایین نوێکارییەکانی فاستلینک (Fastlink): باشترکردنی خێرایی و فراوانکردنی هێڵەکان</span>
+                    </div>
+                    <div class="news-card-desc">
+                        <span class="blue-white-ad-text" style="font-size: 13px;">بۆچی خزمەتگوزارییەکانی فاستلینک لە بەرزبوونەوەی بەردەوامدان و چۆن باشترین سیگناڵ بۆ ڕووتەری ماڵەکەت دەستەبەر بکەیت؟</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card" id="newsCard5">
+                <div class="news-img-container">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="FastPay Digital Wallet">
+                </div>
+                <div class="news-content-box">
+                    <span class="news-date">پارەدانی ئەلیکترۆنی و خزمەتگوزاری دارایی</span>
+                    <div class="news-card-title">
+                        <i class="fas fa-wallet"></i> 
+                        <span class="blue-white-ad-text" style="font-size: 14px;">فاستپەی (FastPay): ئاسانکاری و پاراستنی مامەڵە داراییەکان لە هاوڵاتییاندا</span>
+                    </div>
+                    <div class="news-card-desc">
+                        <span class="blue-white-ad-text" style="font-size: 13px;">چۆنیەتی بەکارهێنانی خزمەتگوزارییەکانی فاستپەی بۆ کڕینی کارت، ناردنی پارە و ئەنجامدانی مامەڵەکان بەشێوازێکی پارێزراو و خێرا.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- بەشی پۆستە ڕۆژانەکان / بڵاوکراوەکان -->
+        <div class="posts-section">
+            <div class="posts-title">
+                <i class="fas fa-bullhorn"></i> 
+                <span class="blue-white-ad-text" style="font-size: 15px;">پۆست و نوێکارییە ڕۆژانەکان</span>
+            </div>
+
+            <div class="post-card">
+                <div class="post-date">ڕۆژانە | بڵاوکراوەی نوێ</div>
+                <div class="post-content">
+                    ئەمڕۆ خزمەتگوزارییەکانی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش و دەوروبەری، هێنانەوەی ئەکاونتەکان، لەگەڵ نوێترین هەواڵ و ڕێنماییەکان (وەک سەیرکردنی کەناڵە وەرزشییەکان بە MyTv+ و هەواڵەکانی ستارلینک، فاستلینک، فاستپەی و هاک) بەردەستن. بۆ هەر داواکارییەک دەتوانن پەیوەندیمان پێوە بکەن.
+                </div>
+            </div>
+        </div>
+
+        <!-- بەشی ناردنی ئیمیل / نامە (Email Contact Section) -->
+        <div class="email-section">
+            <div class="posts-title" style="margin-bottom: 12px;">
+                <i class="fas fa-envelope"></i> 
+                <span class="blue-white-ad-text" style="font-size: 15px;">ناردنی نامە یان ئیمیل</span>
+            </div>
+
+            <div class="email-card">
+                <div style="font-size: 12px; color: var(--desc-color); margin-bottom: 15px; line-height: 1.6;">
+                    گەر پرسیارێک، داواکارییەک یان پێشنیارێکت هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە نامەکەت بنێریت.
+                </div>
+
+                <form class="email-form" action="mailto:sabahsat9@gmail.com" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">ناوی تۆ:</label>
+                        <input type="text" id="name" name="Name" class="form-control" placeholder="ناوی خۆت بنووسە..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">ئیمیل یان ژمارەی پەیوەندی:</label>
+                        <input type="text" id="email" name="Contact" class="form-control" placeholder="ئیمیل یان ژمارەکەت بنووسە..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">نامەکەت:</label>
+                        <textarea id="message" name="Message" class="form-control" placeholder="پەیام یان داواکارییەکەت لێرە بنووسە..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-send">
+                        <i class="fas fa-paper-plane"></i> ناردنی نامە
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Media Links Section -->
+        <div class="socials">
+            <a href="https://www.tiktok.com/@saba_sat?_r=1&_t=ZS-98MvpZKH61P" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1BYZ1ANDXa/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@sabahsat1231?si=xMGcLW7hOrrv-dEd" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/sabah_sat_?igsh=cGNoeXpsN2NwZjNp" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+            <a href="http://t.me/satsat0990" target="_blank" class="social-icon tg"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+
+        <div class="scroll-down">
+            Scroll Down
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- دوگمەی مەلەفی خێرا (Floating Contact Widget) لە خوارەوەی چەپ -->
+    <div class="floating-widget-container">
+        <div class="floating-popup" id="floatingPopup">
+            <div class="floating-popup-title">
+                <i class="fas fa-headset"></i> پەیوەندی خێرا و ڕاستەوخۆ
+            </div>
+            <a href="http://t.me/satsat0990" target="_blank" class="floating-item tg">
+                <i class="fab fa-telegram-plane fa-lg"></i> ناردنی نامە بۆ تەلەگرام
+            </a>
+            <a href="https://wa.me/9647507570731" target="_blank" class="floating-item wa">
+                <i class="fab fa-whatsapp fa-lg"></i> ناردنی نامە بۆ واتسئەپ
+            </a>
+            <a href="tel:+9647507570731" class="floating-item call">
+                <i class="fas fa-phone-alt fa-lg"></i> پەیوەندی تەلەفۆنی خێرا
+            </a>
+        </div>
+        <button class="floating-main-btn" id="floatingMainBtn" onclick="toggleFloatingWidget()" title="پەیوەندی خێرا">
+            <i class="fas fa-comment-dots" id="floatingBtnIcon"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript بۆ سێتینگ، تیمی ڕووناک/تاریک و پەیوەندی خێرا -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // داخستنی مینیو کاتێک لە دەرەوەی دابگیرسێت
+        document.getElementById('menuOverlay').addEventListener('click', function() {
+            document.getElementById('dropdownMenu').classList.remove('active');
+            this.classList.remove('active');
+        });
+
+        // گۆڕینی دۆخی ڕووناک و تاریک (Dark/Light Mode Toggle)
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // کارکردنی دوگمەی مەلەفی پەیوەندی خێرا
+        function toggleFloatingWidget() {
+            const popup = document.getElementById('floatingPopup');
+            const icon = document.getElementById('floatingBtnIcon');
+            
+            popup.classList.toggle('active');
+            
+            if (popup.classList.contains('active')) {
+                icon.classList.remove('fa-comment-dots');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-comment-dots');
+            }
+        }
+
+        // داخستنی پۆپ-ئەپەکەی پەیوەندی خێرا ئەگەر لە دەرەوەی کرتە کرا
+        window.addEventListener('click', function(e) {
+            const container = document.querySelector('.floating-widget-container');
+            const popup = document.getElementById('floatingPopup');
+            const icon = document.getElementById('floatingBtnIcon');
+            
+            if (!container.contains(e.target) && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-comment-dots');
+            }
+        });
+    </script>
+</body>
+</html>
