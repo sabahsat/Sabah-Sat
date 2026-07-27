@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabah Sat - Portfolio</title>
+    
+    <!-- Meta Tags بۆ SEO و دەرکەوتن لە گۆگڵ -->
+    <title>صباح سات - Sabah Sat | خزمەتگوزاری مۆبایل و سەتەلایت لە بەردەڕەش</title>
+    <meta name="description" content="پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت، هێنانەوەی ئەکاونتەکان و خزمەتگوزارییە گشتییەکان لە بەردەڕەش و دەوروبەری.">
+    <meta name="keywords" content="Sabah Sat, صباح سات, بەردەڕەش, سەتەلایت بەردەڕەش, چاککردنەوەی مۆبایل, فۆرمی حەج, جیاکردنەوەی هاوسەران">
+    <meta name="author" content="Sabah Sat">
+
     <!-- FontAwesome Library for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         /* Importing Monospace Font */
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
@@ -138,7 +145,7 @@
             100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
         }
 
-        /* Special Blue & White Ad Animation (سپی و شینی جووڵاو) */
+        /* Special Blue & White Ad Animation */
         .blue-white-ad-text {
             font-weight: 700;
             letter-spacing: 1.1px;
@@ -165,9 +172,7 @@
         }
 
         @keyframes shine {
-            to {
-                background-position: 300% center;
-            }
+            to { background-position: 300% center; }
         }
 
         @keyframes float-text {
@@ -223,7 +228,7 @@
             color: #fff;
         }
 
-        /* Dropdown Menu Overlay / Background Block */
+        /* Dropdown Menu Overlay */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -359,6 +364,7 @@
             background: transparent;
             border: 1px solid rgba(30, 144, 255, 0.4);
             color: #00bfff;
+            text-decoration: none;
         }
 
         /* Additional Services Section Styling */
@@ -369,6 +375,7 @@
             padding: 0 20px;
             box-sizing: border-box;
             direction: rtl;
+            scroll-margin-top: 90px;
         }
         .extra-title {
             font-size: 15px;
@@ -634,7 +641,7 @@
         }
         .social-icon.tg { background-color: #229ED9; border: none; }
 
-        /* Floating Contact Widget Styling (دوگمەی مەلەفی پەیوەندی خێرا) */
+        /* Floating Contact Widget Styling */
         .floating-widget-container {
             position: fixed;
             bottom: 25px;
@@ -779,14 +786,14 @@
                 </div>
                 
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#" class="dropdown-item"><i class="fas fa-mobile-alt"></i> چاککردنەوەی مۆبایل</a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-satellite-dish"></i> سیستەمی سەتەلایت</a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-map-marked-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-shield-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-user-plus"></i> <span class="blue-white-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-exchange-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-user-friends"></i> <span class="blue-white-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
-                    <a href="#" class="dropdown-item"><i class="fas fa-file-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-mobile-alt"></i> چاککردنەوەی مۆبایل</a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-satellite-dish"></i> سیستەمی سەتەلایت</a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-shield-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-plus"></i> <span class="blue-white-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-exchange-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-friends"></i> <span class="blue-white-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
                 </div>
             </div>
         </div>
@@ -813,13 +820,13 @@
                 <i class="fas fa-phone" style="color: #ff4d4d;"></i> 
                 <span class="red-ad-text" style="font-size: 13px;">پەیوەندیکردن</span>
             </a>
-            <a href="#" class="btn btn-project">
+            <a href="#servicesSection" class="btn btn-project">
                 <i class="fas fa-mobile-alt"></i> & <i class="fas fa-satellite-dish"></i> کاری مۆبایل و سەتەلایت
             </a>
         </div>
 
         <!-- بەشی خزمەتگوزارییە زیادکراوەکان -->
-        <div class="extra-services-section">
+        <div class="extra-services-section" id="servicesSection">
             <div class="extra-title">
                 <i class="fas fa-concierge-bell"></i> <span class="blue-white-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
             </div>
@@ -892,130 +899,70 @@
                 <span class="blue-white-ad-text" style="font-size: 15px;">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
             </div>
 
-            <div class="news-card" id="newsCard1">
+            <div class="news-card">
                 <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="MyTv+ Sports Streaming">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Sports" loading="lazy">
                 </div>
                 <div class="news-content-box">
                     <span class="news-date">کەناڵە وەرزشییەکان و یارییەکان</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-tv"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span>
-                    </div>
-                    <div class="news-card-desc">
-                        <span class="blue-white-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span>
-                    </div>
+                    <div class="news-card-title"><i class="fas fa-tv"></i> <span class="blue-white-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span></div>
+                    <div class="news-card-desc"><span class="blue-white-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span></div>
                 </div>
             </div>
 
-            <div class="news-card" id="newsCard2">
+            <div class="news-card">
                 <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cyber Security">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Security" loading="lazy">
                 </div>
                 <div class="news-content-box">
                     <span class="news-date">تەکنەلۆژیا و ئاسایشی دیجیتاڵی</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-shield-alt"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
-                    </div>
-                    <div class="news-card-desc">
-                        <span class="blue-white-ad-text" style="font-size: 13px;">ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication) و دوورکەوتنەوە لە لینکە فێڵبازەکان بۆ پاراستنی تەواوی زانیارییە کەسییەکانت.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card" id="newsCard3">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=800&q=80" alt="Starlink Satellite">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">شۆڕشی ئینتەرنێتی ئاسمانی</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-satellite"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">ستارلینک (Starlink): گۆڕانکاری گەورە لە خێرایی و گەیشتن بە ئینتەرنێت لە ناوچە دوورەدەستەکان</span>
-                    </div>
-                    <div class="news-card-desc">
-                        <span class="blue-white-ad-text" style="font-size: 13px;">چۆنیەتی کارکردنی مانگە دەستکردەکانی ئینتەرنێت و دابینکردنی هێڵی خێرا و بێپچڕان لە دەرەوەی شارەکان و گوندەکاندا.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card" id="newsCard4">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Fastlink Internet">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">تۆڕەکانی پەیوەندی و ئینتەرنێت</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-wifi"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">دوایین نوێکارییەکانی فاستلینک (Fastlink): باشترکردنی خێرایی و فراوانکردنی هێڵەکان</span>
-                    </div>
-                    <div class="news-card-desc">
-                        <span class="blue-white-ad-text" style="font-size: 13px;">بۆچی خزمەتگوزارییەکانی فاستلینک لە بەرزبوونەوەی بەردەوامدان و چۆن باشترین سیگناڵ بۆ ڕووتەری ماڵەکەت دەستەبەر بکەیت؟</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card" id="newsCard5">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="FastPay Digital Wallet">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">پارەدانی ئەلیکترۆنی و خزمەتگوزاری دارایی</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-wallet"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">فاستپەی (FastPay): ئاسانکاری و پاراستنی مامەڵە داراییەکان لە هاوڵاتییاندا</span>
-                    </div>
-                    <div class="news-card-desc">
-                        <span class="blue-white-ad-text" style="font-size: 13px;">چۆنیەتی بەکارهێنانی خزمەتگوزارییەکانی فاستپەی بۆ کڕینی کارت، ناردنی پارە و ئەنجامدانی مامەڵەکان بەشێوازێکی پارێزراو و خێرا.</span>
-                    </div>
+                    <div class="news-card-title"><i class="fas fa-shield-alt"></i> <span class="blue-white-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span></div>
+                    <div class="news-card-desc"><span class="blue-white-ad-text" style="font-size: 13px;">ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان.</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- بەشی پۆستە ڕۆژانەکان / بڵاوکراوەکان -->
+        <!-- بەشی پۆستە ڕۆژانەکان -->
         <div class="posts-section">
             <div class="posts-title">
                 <i class="fas fa-bullhorn"></i> 
                 <span class="blue-white-ad-text" style="font-size: 15px;">پۆست و نوێکارییە ڕۆژانەکان</span>
             </div>
-
             <div class="post-card">
                 <div class="post-date">ڕۆژانە | بڵاوکراوەی نوێ</div>
                 <div class="post-content">
-                    ئەمڕۆ خزمەتگوزارییەکانی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش و دەوروبەری، هێنانەوەی ئەکاونتەکان، لەگەڵ نوێترین هەواڵ و ڕێنماییەکان (وەک سەیرکردنی کەناڵە وەرزشییەکان بە MyTv+ و هەواڵەکانی ستارلینک، فاستلینک، فاستپەی و هاک) بەردەستن. بۆ هەر داواکارییەک دەتوانن پەیوەندیمان پێوە بکەن.
+                    ئەمڕۆ خزمەتگوزارییەکانی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش و دەوروبەری، هێنانەوەی ئەکاونتەکان و سەرجەم خزمەتگوزارییە گشتییەکان بەردەستن.
                 </div>
             </div>
         </div>
 
-        <!-- بەشی ناردنی ئیمیل / نامە (Email Contact Section) -->
+        <!-- بەشی ناردنی نامە (Formspree Integration) -->
         <div class="email-section">
             <div class="posts-title" style="margin-bottom: 12px;">
                 <i class="fas fa-envelope"></i> 
                 <span class="blue-white-ad-text" style="font-size: 15px;">ناردنی نامە یان ئیمیل</span>
             </div>
-
             <div class="email-card">
                 <div style="font-size: 12px; color: var(--desc-color); margin-bottom: 15px; line-height: 1.6;">
-                    گەر پرسیارێک، داواکارییەک یان پێشنیارێکت هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە نامەکەت بنێریت.
+                    گەر پرسیارێک یان داواکارییەک هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە ڕاستەوخۆ نامەکەت بنێریت.
                 </div>
-
-                <form class="email-form" action="mailto:sabahsat9@gmail.com" method="POST" enctype="text/plain">
+                <!-- 
+                  بۆ کارپێکردنی فۆرمەکە بە شێوەی ڕاستەوخۆ، دەتوانیت لە https://formspree.io خۆت تۆمار بکەیت 
+                  و لە جیاتی 'your-form-id' لینکی تایبەتی خۆت دابنێیت.
+                -->
+                <form class="email-form" action="https://formspree.io/f/your-form-id" method="POST">
                     <div class="form-group">
                         <label for="name">ناوی تۆ:</label>
                         <input type="text" id="name" name="Name" class="form-control" placeholder="ناوی خۆت بنووسە..." required>
                     </div>
-
                     <div class="form-group">
                         <label for="email">ئیمیل یان ژمارەی پەیوەندی:</label>
                         <input type="text" id="email" name="Contact" class="form-control" placeholder="ئیمیل یان ژمارەکەت بنووسە..." required>
                     </div>
-
                     <div class="form-group">
                         <label for="message">نامەکەت:</label>
                         <textarea id="message" name="Message" class="form-control" placeholder="پەیام یان داواکارییەکەت لێرە بنووسە..." required></textarea>
                     </div>
-
                     <button type="submit" class="btn-send">
                         <i class="fas fa-paper-plane"></i> ناردنی نامە
                     </button>
@@ -1025,11 +972,11 @@
 
         <!-- Social Media Links Section -->
         <div class="socials">
-            <a href="https://www.tiktok.com/@saba_sat?_r=1&_t=ZS-98MvpZKH61P" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/share/1BYZ1ANDXa/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@sabahsat1231?si=xMGcLW7hOrrv-dEd" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/sabah_sat_?igsh=cGNoeXpsN2NwZjNp" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
-            <a href="http://t.me/satsat0990" target="_blank" class="social-icon tg"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.tiktok.com/@saba_sat?_r=1&_t=ZS-98MvpZKH61P" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1BYZ1ANDXa/" target="_blank" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@sabahsat1231?si=xMGcLW7hOrrv-dEd" target="_blank" class="social-icon yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/sabah_sat_?igsh=cGNoeXpsN2NwZjNp" target="_blank" class="social-icon ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="http://t.me/satsat0990" target="_blank" class="social-icon tg" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
         </div>
 
         <div class="scroll-down">
@@ -1038,7 +985,7 @@
         </div>
     </div>
 
-    <!-- دوگمەی مەلەفی خێرا (Floating Contact Widget) لە خوارەوەی چەپ -->
+    <!-- Floating Contact Widget -->
     <div class="floating-widget-container">
         <div class="floating-popup" id="floatingPopup">
             <div class="floating-popup-title">
@@ -1059,27 +1006,22 @@
         </button>
     </div>
 
-    <!-- JavaScript بۆ سێتینگ، تیمی ڕووناک/تاریک و پەیوەندی خێرا -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
             const overlay = document.getElementById('menuOverlay');
-            
             menu.classList.toggle('active');
             overlay.classList.toggle('active');
         }
 
-        // داخستنی مینیو کاتێک لە دەرەوەی دابگیرسێت
         document.getElementById('menuOverlay').addEventListener('click', function() {
             document.getElementById('dropdownMenu').classList.remove('active');
             this.classList.remove('active');
         });
 
-        // گۆڕینی دۆخی ڕووناک و تاریک (Dark/Light Mode Toggle)
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('themeIcon');
-            
             if (body.getAttribute('data-theme') === 'dark') {
                 body.setAttribute('data-theme', 'light');
                 themeIcon.classList.remove('fa-moon');
@@ -1091,13 +1033,10 @@
             }
         }
 
-        // کارکردنی دوگمەی مەلەفی پەیوەندی خێرا
         function toggleFloatingWidget() {
             const popup = document.getElementById('floatingPopup');
             const icon = document.getElementById('floatingBtnIcon');
-            
             popup.classList.toggle('active');
-            
             if (popup.classList.contains('active')) {
                 icon.classList.remove('fa-comment-dots');
                 icon.classList.add('fa-times');
@@ -1107,12 +1046,10 @@
             }
         }
 
-        // داخستنی پۆپ-ئەپەکەی پەیوەندی خێرا ئەگەر لە دەرەوەی کرتە کرا
         window.addEventListener('click', function(e) {
             const container = document.querySelector('.floating-widget-container');
             const popup = document.getElementById('floatingPopup');
             const icon = document.getElementById('floatingBtnIcon');
-            
             if (!container.contains(e.target) && popup.classList.contains('active')) {
                 popup.classList.remove('active');
                 icon.classList.remove('fa-times');
