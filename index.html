@@ -10,48 +10,50 @@
         /* Importing Monospace Font */
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
 
-        /* Default Dark Theme Variables */
+        /* Default Dark Cyber Security Theme Variables */
         :root {
-            --bg-color: #05030f;
-            --text-color: #c8d3f5;
-            --nav-bg: rgba(5, 3, 15, 0.9);
-            --card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(15, 12, 35, 0.85));
-            --card-solid: rgba(15, 12, 35, 0.7);
-            --border-color: rgba(30, 144, 255, 0.3);
-            --heading-color: #e2e8f0;
-            --subheading-color: #a0aec0;
+            --bg-color: #030712;
+            --text-color: #cbd5e1;
+            --nav-bg: rgba(3, 7, 18, 0.85);
+            --card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(3, 7, 18, 0.9));
+            --card-solid: rgba(3, 7, 18, 0.8);
+            --border-color: rgba(16, 185, 129, 0.25);
+            --heading-color: #f8fafc;
+            --subheading-color: #94a3b8;
             --desc-color: #94a3b8;
-            --input-bg: rgba(5, 3, 15, 0.8);
-            --popup-bg: rgba(8, 6, 18, 0.98);
-            --dropdown-bg: #080612;
-            --extra-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.12), rgba(15, 12, 35, 0.8));
-            --email-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(15, 12, 35, 0.9));
-            --net-line-1: rgba(255,255,255,0.02);
-            --net-line-2: rgba(255,255,255,0.02);
-            --radial-1: rgba(75, 82, 138, 0.08);
-            --radial-2: rgba(75, 82, 138, 0.08);
+            --input-bg: rgba(3, 7, 18, 0.9);
+            --popup-bg: rgba(3, 7, 18, 0.98);
+            --dropdown-bg: #030712;
+            --extra-card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(3, 7, 18, 0.85));
+            --email-card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(3, 7, 18, 0.9));
+            --net-line-1: rgba(16, 185, 129, 0.04);
+            --net-line-2: rgba(16, 185, 129, 0.04);
+            --radial-1: rgba(16, 185, 129, 0.08);
+            --radial-2: rgba(59, 130, 246, 0.06);
+            --accent-glow: #10b981;
         }
 
         /* Light Theme Variables */
         [data-theme="light"] {
-            --bg-color: #f0f4f8;
-            --text-color: #2d3748;
-            --nav-bg: rgba(240, 244, 248, 0.9);
-            --card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.06), rgba(255, 255, 255, 0.9));
+            --bg-color: #f0fdf4;
+            --text-color: #1e293b;
+            --nav-bg: rgba(240, 253, 244, 0.9);
+            --card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(255, 255, 255, 0.9));
             --card-solid: rgba(255, 255, 255, 0.9);
-            --border-color: rgba(30, 144, 255, 0.3);
-            --heading-color: #1a202c;
-            --subheading-color: #4a5568;
-            --desc-color: #4a5568;
+            --border-color: rgba(16, 185, 129, 0.3);
+            --heading-color: #0f172a;
+            --subheading-color: #334155;
+            --desc-color: #334155;
             --input-bg: rgba(255, 255, 255, 0.9);
             --popup-bg: rgba(255, 255, 255, 0.99);
             --dropdown-bg: #ffffff;
-            --extra-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.08), rgba(255, 255, 255, 0.95));
-            --email-card-bg: linear-gradient(135deg, rgba(30, 144, 255, 0.08), rgba(255, 255, 255, 0.95));
+            --extra-card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(255, 255, 255, 0.95));
+            --email-card-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(255, 255, 255, 0.95));
             --net-line-1: rgba(0,0,0,0.03);
             --net-line-2: rgba(0,0,0,0.03);
-            --radial-1: rgba(30, 144, 255, 0.05);
-            --radial-2: rgba(0, 191, 255, 0.05);
+            --radial-1: rgba(16, 185, 129, 0.05);
+            --radial-2: rgba(59, 130, 246, 0.05);
+            --accent-glow: #059669;
         }
 
         body, html {
@@ -66,7 +68,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Abstract Network Background Effect */
+        /* Advanced Cyber Security Matrix Background Effect */
         .background {
             position: fixed;
             top: 0;
@@ -74,11 +76,12 @@
             width: 100vw;
             height: 100vh;
             background-image:
-                radial-gradient(circle at 15% 50%, var(--radial-1), transparent 35%),
-                radial-gradient(circle at 85% 30%, var(--radial-2), transparent 35%);
-            z-index: -1;
+                radial-gradient(circle at 10% 20%, var(--radial-1), transparent 40%),
+                radial-gradient(circle at 90% 80%, var(--radial-2), transparent 40%);
+            z-index: -2;
             transition: background-image 0.3s ease;
         }
+
         .network-lines {
             position: absolute;
             width: 100%;
@@ -86,9 +89,27 @@
             background-image: 
                 linear-gradient(var(--net-line-1) 1px, transparent 1px), 
                 linear-gradient(90deg, var(--net-line-2) 1px, transparent 1px);
-            background-size: 80px 80px;
+            background-size: 50px 50px;
             z-index: -1;
-            opacity: 0.7;
+            opacity: 0.8;
+        }
+
+        .cyber-radar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0) 0%, rgba(16, 185, 129, 0.03) 50%, rgba(16, 185, 129, 0) 100%);
+            background-size: 100% 3000px;
+            animation: radar-scan 12s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes radar-scan {
+            0% { background-position: 0 -1000px; }
+            100% { background-position: 0 2000px; }
         }
 
         /* Navbar Styling */
@@ -98,7 +119,7 @@
             align-items: center;
             padding: 15px 20px;
             background: var(--nav-bg);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             position: fixed;
             top: 0;
@@ -118,31 +139,26 @@
             align-items: center;
             gap: 10px;
         }
-        .logo-circle {
-            width: 35px;
-            height: 35px;
+        
+        .logo-img {
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            border: 1px solid #1e90ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: #1e90ff;
+            object-fit: cover;
+            border: 1px solid var(--accent-glow);
             animation: pulse-border 2s infinite;
         }
         
         @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(30, 144, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
-        /* Special Blue & White Ad Animation */
-        .blue-white-ad-text {
+        .cyber-ad-text {
             font-weight: 700;
             letter-spacing: 1.1px;
-            background: linear-gradient(90deg, #1e90ff, #0056b3, #00bfff, #0056b3, #1e90ff);
+            background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6, #06b6d4, #10b981);
             background-size: 300% auto;
             color: transparent;
             -webkit-background-clip: text;
@@ -151,7 +167,6 @@
             display: inline-block;
         }
 
-        /* Special Red Animated Ad Text for Contact Button */
         .red-ad-text {
             font-weight: 700;
             letter-spacing: 1px;
@@ -165,9 +180,7 @@
         }
 
         @keyframes shine {
-            to {
-                background-position: 300% center;
-            }
+            to { background-position: 300% center; }
         }
 
         @keyframes float-text {
@@ -175,7 +188,6 @@
             100% { transform: translateY(-3px); }
         }
 
-        /* Theme Toggle Button & Menu Actions */
         .nav-actions {
             display: flex;
             align-items: center;
@@ -183,25 +195,24 @@
         }
 
         .theme-toggle-btn {
-            background: rgba(30, 144, 255, 0.15);
-            border: 1px solid rgba(30, 144, 255, 0.3);
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             width: 38px;
             height: 38px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #00bfff;
+            color: var(--accent-glow);
             cursor: pointer;
             transition: all 0.3s ease;
         }
         .theme-toggle-btn:hover {
-            background: rgba(30, 144, 255, 0.3);
+            background: rgba(16, 185, 129, 0.3);
             color: #fff;
             transform: rotate(20deg);
         }
         
-        /* Menu / Settings Button Styling */
         .menu-container {
             position: relative;
         }
@@ -209,28 +220,27 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(30, 144, 255, 0.15);
-            border: 1px solid rgba(30, 144, 255, 0.3);
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             padding: 8px 14px;
             border-radius: 20px;
-            color: #00bfff;
+            color: var(--accent-glow);
             font-size: 13px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         .menu-settings:hover {
-            background: rgba(30, 144, 255, 0.3);
+            background: rgba(16, 185, 129, 0.3);
             color: #fff;
         }
 
-        /* Dropdown Menu Overlay */
         .menu-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(3, 2, 8, 0.6);
+            background: rgba(3, 7, 18, 0.7);
             backdrop-filter: blur(5px);
             display: none;
             z-index: 99;
@@ -239,16 +249,15 @@
             display: block;
         }
 
-        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 50px;
             right: 0;
             width: 300px;
             background: var(--dropdown-bg);
-            border: 1px solid rgba(30, 144, 255, 0.4);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             display: none;
             flex-direction: column;
             padding: 10px 0;
@@ -272,34 +281,86 @@
             transition: background 0.2s;
         }
         .dropdown-item:hover {
-            background: rgba(30, 144, 255, 0.25);
-            color: #00bfff;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-glow);
         }
         .dropdown-item i {
-            color: #1e90ff;
+            color: var(--accent-glow);
             width: 16px;
             text-align: center;
             flex-shrink: 0;
         }
 
-        /* Hero Section Styling */
+        /* Quick Notice / Marquee Ticker Styling */
+        .cyber-ticker-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 75px auto 10px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+            overflow: hidden;
+        }
+        .cyber-ticker {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(3, 7, 18, 0.95));
+            border: 1px solid var(--accent-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+        .ticker-badge {
+            background: var(--accent-glow);
+            color: #030712;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            position: relative;
+        }
+        .ticker-text {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--text-color);
+            animation: marquee 22s linear infinite;
+        }
+        .ticker-text span {
+            margin-left: 40px;
+            color: var(--accent-glow);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 70px;
+            padding: 20px 20px 40px 20px;
         }
 
         .badge {
-            background-color: rgba(30, 144, 255, 0.1);
-            border: 1px solid rgba(30, 144, 255, 0.4);
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             padding: 10px 25px;
             border-radius: 25px;
             font-size: 14px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 15px rgba(30, 144, 255, 0.15);
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
         }
 
         h1 {
@@ -325,7 +386,6 @@
             direction: rtl;
         }
 
-        /* Buttons Styling */
         .buttons {
             display: flex;
             flex-wrap: wrap;
@@ -346,7 +406,7 @@
             color: white;
         }
         .btn-contact {
-            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(20, 15, 30, 0.9));
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(3, 7, 18, 0.9));
             border: 1px solid rgba(255, 0, 0, 0.4);
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
             transition: all 0.3s ease;
@@ -357,12 +417,59 @@
         }
         .btn-project {
             background: transparent;
-            border: 1px solid rgba(30, 144, 255, 0.4);
-            color: #00bfff;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: var(--accent-glow);
             text-decoration: none;
         }
 
-        /* Additional Services Section Styling */
+        /* Cyber Tip of the Day Section Styling */
+        .cyber-tip-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .cyber-tip-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(3, 7, 18, 0.95));
+            border: 1px solid var(--accent-glow);
+            border-radius: 14px;
+            padding: 18px 20px;
+            backdrop-filter: blur(8px);
+            text-align: right;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: tip-glow 4s ease-in-out infinite alternate;
+        }
+        @keyframes tip-glow {
+            0% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.35); border-color: rgba(16, 185, 129, 0.8); }
+        }
+        .cyber-tip-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+            margin-bottom: 10px;
+        }
+        .cyber-tip-header i {
+            animation: rotate-shield 4s linear infinite;
+        }
+        @keyframes rotate-shield {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+        .cyber-tip-text {
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
         .extra-services-section {
             width: 100%;
             max-width: 450px;
@@ -380,7 +487,7 @@
             gap: 8px;
         }
         .extra-title i {
-            color: #1e90ff;
+            color: var(--accent-glow);
         }
         .extra-card {
             background: var(--extra-card-bg);
@@ -394,13 +501,13 @@
         }
         .extra-card:hover {
             transform: translateY(-3px);
-            border-color: rgba(30, 144, 255, 0.75);
-            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.2);
+            border-color: rgba(16, 185, 129, 0.8);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
         }
         .extra-card-title {
             font-size: 14px;
             font-weight: bold;
-            color: #1e90ff;
+            color: var(--accent-glow);
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -412,7 +519,108 @@
             line-height: 1.6;
         }
 
-        /* Tech News Section with Images */
+        /* Testimonials Section Styling */
+        .testimonials-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(16, 185, 129, 0.8);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
+        }
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .testimonial-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+        }
+        .testimonial-stars {
+            color: #f59e0b;
+            font-size: 11px;
+        }
+        .testimonial-text {
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section Styling (Interactive Accordion) */
+        .faq-section {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        .faq-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .faq-card:hover {
+            border-color: rgba(16, 185, 129, 0.8);
+        }
+        .faq-question {
+            padding: 15px 18px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--accent-glow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+            user-select: none;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+            font-size: 11px;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 18px;
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(3, 7, 18, 0.3);
+            border-top: 1px solid transparent;
+        }
+        .faq-card.active .faq-answer {
+            max-height: 150px;
+            padding: 12px 18px 15px 18px;
+            border-top-color: rgba(16, 185, 129, 0.15);
+        }
+        .faq-card.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
         .news-section {
             width: 100%;
             max-width: 450px;
@@ -430,7 +638,7 @@
             gap: 8px;
         }
         .news-title i {
-            color: #1e90ff;
+            color: var(--accent-glow);
         }
         .news-card {
             background: var(--card-bg);
@@ -444,8 +652,8 @@
         }
         .news-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(30, 144, 255, 0.8);
-            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.15);
+            border-color: rgba(16, 185, 129, 0.9);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
         }
 
         .news-img-container {
@@ -469,7 +677,7 @@
         .news-card-title {
             font-size: 14px;
             font-weight: bold;
-            color: #00bfff;
+            color: var(--accent-glow);
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -487,15 +695,15 @@
         }
         .news-date {
             font-size: 11px;
-            color: #1e90ff;
+            color: var(--accent-glow);
             margin-bottom: 6px;
             display: block;
         }
         
         .read-more-btn {
-            background: rgba(30, 144, 255, 0.15);
-            border: 1px solid rgba(30, 144, 255, 0.3);
-            color: #00bfff;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-glow);
             padding: 6px 14px;
             border-radius: 15px;
             font-size: 11px;
@@ -507,18 +715,17 @@
             gap: 6px;
         }
         .read-more-btn:hover {
-            background: rgba(30, 144, 255, 0.3);
+            background: rgba(16, 185, 129, 0.3);
             color: #fff;
         }
 
-        /* Full Report Modal Popup Styling */
         .report-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(3, 2, 8, 0.8);
+            background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
@@ -533,14 +740,14 @@
         }
         .report-modal-content {
             background: var(--popup-bg);
-            border: 1px solid rgba(30, 144, 255, 0.5);
+            border: 1px solid rgba(16, 185, 129, 0.5);
             border-radius: 16px;
             width: 100%;
             max-width: 600px;
             max-height: 85vh;
             overflow-y: auto;
             padding: 25px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             text-align: right;
             position: relative;
             animation: modal-appear 0.3s ease;
@@ -572,7 +779,7 @@
         .report-title {
             font-size: 16px;
             font-weight: bold;
-            color: #00bfff;
+            color: var(--accent-glow);
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid var(--border-color);
@@ -583,13 +790,13 @@
         }
         .report-subtitle {
             font-size: 12px;
-            color: #1e90ff;
+            color: var(--accent-glow);
             margin-bottom: 20px;
             line-height: 1.6;
-            background: rgba(30, 144, 255, 0.08);
+            background: rgba(16, 185, 129, 0.08);
             padding: 10px 14px;
             border-radius: 8px;
-            border-right: 3px solid #1e90ff;
+            border-right: 3px solid var(--accent-glow);
         }
         .report-section-title {
             font-size: 14px;
@@ -601,7 +808,7 @@
             gap: 8px;
         }
         .report-section-title i {
-            color: #1e90ff;
+            color: var(--accent-glow);
         }
         .report-text {
             font-size: 12px;
@@ -620,7 +827,6 @@
             margin-bottom: 6px;
         }
 
-        /* Daily Posts Section Styling */
         .posts-section {
             width: 100%;
             max-width: 450px;
@@ -638,7 +844,7 @@
             gap: 8px;
         }
         .posts-title i {
-            color: #1e90ff;
+            color: var(--accent-glow);
         }
         .post-card {
             background: var(--card-solid);
@@ -652,7 +858,7 @@
         }
         .post-date {
             font-size: 11px;
-            color: #1e90ff;
+            color: var(--accent-glow);
             margin-bottom: 6px;
         }
         .post-content {
@@ -661,7 +867,6 @@
             line-height: 1.6;
         }
 
-        /* Email Form Section Styling */
         .email-section {
             width: 100%;
             max-width: 450px;
@@ -693,7 +898,7 @@
         }
         .form-group label {
             font-size: 12px;
-            color: #00bfff;
+            color: var(--accent-glow);
         }
         .form-control {
             background: var(--input-bg);
@@ -707,15 +912,15 @@
             transition: border-color 0.3s, background 0.3s;
         }
         .form-control:focus {
-            border-color: #1e90ff;
-            box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
         }
         textarea.form-control {
             resize: vertical;
             min-height: 90px;
         }
         .btn-send {
-            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             border: none;
             border-radius: 8px;
@@ -736,7 +941,6 @@
             transform: translateY(-2px);
         }
 
-        /* Social Icons Styling */
         .socials {
             display: flex;
             gap: 15px;
@@ -753,7 +957,7 @@
             text-decoration: none;
             color: white;
             background-color: transparent;
-            border: 1px solid rgba(30, 144, 255, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.2);
             transition: transform 0.3s ease;
         }
         .social-icon:hover {
@@ -767,7 +971,6 @@
         }
         .social-icon.tg { background-color: #229ED9; border: none; }
 
-        /* Floating Contact Widget Styling */
         .floating-widget-container {
             position: fixed;
             bottom: 25px;
@@ -780,10 +983,10 @@
             width: 55px;
             height: 55px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             border: none;
-            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.5);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -795,13 +998,13 @@
 
         .floating-main-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.8);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.8);
         }
 
         @keyframes float-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(30, 144, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         .floating-popup {
@@ -810,10 +1013,10 @@
             left: 0;
             width: 240px;
             background: var(--popup-bg);
-            border: 1px solid rgba(30, 144, 255, 0.4);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             border-radius: 15px;
             padding: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
             display: none;
             flex-direction: column;
@@ -831,9 +1034,9 @@
 
         .floating-popup-title {
             font-size: 11px;
-            color: #00bfff;
+            color: var(--accent-glow);
             padding: 4px 8px;
-            border-bottom: 1px solid rgba(30, 144, 255, 0.2);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
             margin-bottom: 4px;
             font-weight: bold;
             display: flex;
@@ -850,13 +1053,13 @@
             text-decoration: none;
             color: var(--text-color);
             font-size: 12px;
-            background: rgba(30, 144, 255, 0.08);
+            background: rgba(16, 185, 129, 0.08);
             transition: all 0.2s ease;
         }
 
         .floating-item:hover {
-            background: rgba(30, 144, 255, 0.25);
-            color: #00bfff;
+            background: rgba(16, 185, 129, 0.25);
+            color: var(--accent-glow);
             transform: translateX(-3px);
         }
 
@@ -864,12 +1067,11 @@
         .floating-item.wa i { color: #25D366; }
         .floating-item.call i { color: #ff4d4d; }
 
-        /* Scroll Down Indicator */
         .scroll-down {
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #1e90ff;
+            color: var(--accent-glow);
             font-size: 13px;
             gap: 8px;
             animation: bounce 2s infinite;
@@ -883,8 +1085,10 @@
     </style>
 </head>
 <body data-theme="dark">
+    <!-- Cyber Security Background Layers -->
     <div class="background">
         <div class="network-lines"></div>
+        <div class="cyber-radar"></div>
     </div>
 
     <!-- Background Dark Overlay for Menu -->
@@ -903,7 +1107,6 @@
                 ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان.
             </div>
 
-            <!-- خاڵی یەکەم -->
             <div class="report-section-title">
                 <i class="fas fa-lock"></i> یەکەم: چۆنیەتی چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication - 2FA)
             </div>
@@ -919,7 +1122,6 @@
                 <li>باشترە ئەپڵیکەیشنی تایبەت بە پشتڕاستکردنەوە (Authenticator App) وەک Google Authenticator یان 2FAS بەکاربهێنیت لەبەر ئەوەی لە نامەی کورتەیاسا (SMS) زۆر سەلامەتترە.</li>
             </ul>
 
-            <!-- خاڵی دووەم -->
             <div class="report-section-title">
                 <i class="fas fa-fish"></i> دووەم: خۆپاراستن لە لینکە فێڵبازەکان و تاوانی فیشینگ (Phishing)
             </div>
@@ -939,7 +1141,6 @@
                 <li>هیچ کاتێک کۆدی پشتڕاستکردنەوە (OTP) یان وشەی نهێنی بە هیچ کەسێک مەدە، تەنانەت ئەگەر خۆیان بە کارمەندی پشتگیری تەکنیکی ناساند.</li>
             </ul>
 
-            <!-- خاڵی سێیەم -->
             <div class="report-section-title">
                 <i class="fas fa-shield-alt"></i> سێیەم: ڕێنمایی زێڕین بۆ ئاسایشی گشتی مۆبایل و ئەکاونتەکانت
             </div>
@@ -955,8 +1156,8 @@
     <nav>
         <div class="nav-left">
             <div class="logo-container">
-                <div class="logo-circle">SS</div>
-                <div class="blue-white-ad-text" style="font-size: 16px;">Sabah Sat</div>
+                <img src="1785164280697.jpg" alt="Sabah Sat Logo" class="logo-img">
+                <div class="red-ad-text" style="font-size: 16px;">Sabah Sat</div>
             </div>
         </div>
 
@@ -975,32 +1176,59 @@
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-mobile-alt"></i> چاککردنەوەی مۆبایل</a>
                     <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-satellite-dish"></i> سیستەمی سەتەلایت</a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-shield-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-plus"></i> <span class="blue-white-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-exchange-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-friends"></i> <span class="blue-white-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span class="blue-white-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-shield-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-plus"></i> <span class="cyber-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-exchange-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-friends"></i> <span class="cyber-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Quick Notice / Marquee Ticker Section -->
+    <div class="cyber-ticker-container">
+        <div class="cyber-ticker">
+            <div class="ticker-badge">
+                <i class="fas fa-bolt"></i> ئاگاداری:
+            </div>
+            <div class="ticker-wrap">
+                <div class="ticker-text">
+                    بەخێر هاتن بۆ ماڵپەڕی رسمی <span>Sabah Sat</span> خزمەتگوزاری خێرا بۆ چاککردنەوەی مۆبایل و بەستنی سەتەلایت <span>هەرگیز کۆدی OTP مەدە بە هیچ کەسێک!</span> پێشکەشکردنی باشترین خزمەتگوزاری سایبەری و گشتی لە بەردەڕەش و دەوروبەری.
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Hero Section -->
     <div class="hero">
         <div class="badge">
-            <span class="blue-white-ad-text">بەخێربێیت بۆ پڕۆفایلەکەم</span>
+            <span class="cyber-ad-text">پەخش و سیستەمی سایبەری</span>
         </div>
 
-        <h1>Hi, I'm <span class="blue-white-ad-text" style="font-size: 26px;">Sabah Sat</span></h1>
+        <h1>Hi, I'm <span class="red-ad-text" style="font-size: 26px;">Sabah Sat</span></h1>
         
         <h2>
-            <span class="blue-white-ad-text" style="font-size: 18px;">کاری موبایل و سەتەلایت</span>
+            <span class="cyber-ad-text" style="font-size: 18px;">کاری موبایل و سەتەلایت & ئاسایشی سایبەری</span>
         </h2>
 
         <p class="description">
-            <span class="blue-white-ad-text" style="font-size: 14px;">Sabah Sat</span> - <span class="blue-white-ad-text" style="font-size: 14px;">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و خزمەتگوزارییە گشتییەکان.</span>
+            <span class="red-ad-text" style="font-size: 14px;">Sabah Sat</span> - <span class="cyber-ad-text" style="font-size: 14px;">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.</span>
         </p>
+
+        <!-- Cyber Tip of the Day Section -->
+        <div class="cyber-tip-section">
+            <div class="cyber-tip-card">
+                <div class="cyber-tip-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>ئامۆژگاری سایبەری ڕۆژانە (Cyber Tip of the Day)</span>
+                </div>
+                <div class="cyber-tip-text">
+                    <strong>ئامۆژگاری:</strong> هیچ کاتێک کۆدی پشتڕاستکردنەوەی (OTP) تەلەگرام یان واتسئەپەکەت مەدە بە هیچ کەسێک، تەنانەت ئەگەر وای پیشان بدەن کە هاوڕێ یان کارمەندی کۆمپانیان.
+                </div>
+            </div>
+        </div>
 
         <div class="buttons">
             <a href="tel:+9647507570731" class="btn btn-contact">
@@ -1008,20 +1236,19 @@
                 <span class="red-ad-text" style="font-size: 13px;">پەیوەندیکردن</span>
             </a>
             <a href="#servicesSection" class="btn btn-project">
-                <i class="fas fa-mobile-alt"></i> & <i class="fas fa-satellite-dish"></i> کاری مۆبایل و سەتەلایت
+                <i class="fas fa-shield-alt"></i> خزمەتگوزارییەکان
             </a>
         </div>
 
-        <!-- بەشی خزمەتگوزارییە زیادکراوەکان -->
         <div class="extra-services-section" id="servicesSection">
             <div class="extra-title">
-                <i class="fas fa-concierge-bell"></i> <span class="blue-white-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
+                <i class="fas fa-concierge-bell"></i> <span class="cyber-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
             </div>
 
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-satellite-dish"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 14px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span>
+                    <span class="cyber-ad-text" style="font-size: 14px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span>
                 </div>
                 <div class="extra-card-desc">
                     خزمەتگوزاری خێرا و پیشەگەر بۆ دانان، ڕێکخستن و بەستنی سیستەمی سەتەلایت و دیش لە سەرجەم گوندەکان و ناوچەکانی بەردەڕەش و دەوروبەری بە باشترین کوالێتی.
@@ -1031,7 +1258,7 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-unlock-alt"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 14px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
+                    <span class="cyber-ad-text" style="font-size: 14px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
                 </div>
                 <div class="extra-card-desc">
                     گەڕاندنەوەی ئەکاونتە هاککراو، گیراو یان لەدەستچووەکان بە زووترین کات و بە پارێزراوی تەواو بۆ هاوڵاتییانی خۆشەویست.
@@ -1041,7 +1268,7 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-envelope-open-text"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 13px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span>
                 </div>
                 <div class="extra-card-desc">
                     ئامادەین بۆ دروستکردن و دامەزراندنی هەژماری فەرمی و نوێ (جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چات) بە شێوازێکی زامنکراو، پارێزراو و بە ڕەچاوکردنی تەواوی مەرجەکانی ئاسایش بۆ مۆبایلەکەت.
@@ -1051,7 +1278,7 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-child"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 14px;">نەقل کردن و زیادکردنی منداڵ</span>
+                    <span class="cyber-ad-text" style="font-size: 14px;">نەقل کردن و زیادکردنی منداڵ</span>
                 </div>
                 <div class="extra-card-desc">
                     ئەنجامدانی مامەڵەی گواستنەوەی (نەقل کردن) و زیادکردنی ناوی منداڵ بۆ سەر فۆرمی خۆراک بە شێوەیەکی ورد و دروست.
@@ -1061,7 +1288,7 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-user-plus"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 14px;">جیاکردنەوەی هاوسەری نوێ</span>
+                    <span class="cyber-ad-text" style="font-size: 14px;">جیاکردنەوەی هاوسەری نوێ</span>
                 </div>
                 <div class="extra-card-desc">
                     ئامادەکاریکردن و جیاکردنەوەی فۆرمی خۆراک بۆ هاوسەرانی نوێ بە هەموو ڕێکارە یاسایی و کارگێڕییە پێویستەکانەوە.
@@ -1071,7 +1298,7 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-kaaba"></i> 
-                    <span class="blue-white-ad-text" style="font-size: 14px;">پڕکردنەوەی فۆرمی حەج</span>
+                    <span class="cyber-ad-text" style="font-size: 14px;">پڕکردنەوەی فۆرمی حەج</span>
                 </div>
                 <div class="extra-card-desc">
                     ئامادەین بۆ پڕکردنەوەی ورد و دروستی فۆرمی حەج بۆ هاوڵاتییانی خۆشەویست.
@@ -1079,11 +1306,10 @@
             </div>
         </div>
 
-        <!-- بەشی هەواڵ و بابەتە سەرنجڕاکێشەکان (نوێکراوە بۆ فۆرمی ڕاپۆرتی تەواو) -->
         <div class="news-section" id="newsSection">
             <div class="news-title">
                 <i class="fas fa-fire"></i> 
-                <span class="blue-white-ad-text" style="font-size: 15px;">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
+                <span class="cyber-ad-text" style="font-size: 15px;">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
             </div>
 
             <div class="news-card">
@@ -1094,7 +1320,7 @@
                     <span class="news-date">تەکنەلۆژیا و ئاسایشی سایبەری</span>
                     <div class="news-card-title" onclick="openReportModal()">
                         <i class="fas fa-shield-alt"></i> 
-                        <span class="blue-white-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
+                        <span class="cyber-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
                     </div>
                     <div class="news-card-desc">
                         ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان. بۆ خوێندنەوەی ڕاپۆرتی تەواو و وردەکارییەکانی کرتە بکە.
@@ -1111,17 +1337,110 @@
                 </div>
                 <div class="news-content-box">
                     <span class="news-date">کەناڵە وەرزشییەکان و یارییەکان</span>
-                    <div class="news-card-title"><i class="fas fa-tv"></i> <span class="blue-white-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span></div>
-                    <div class="news-card-desc"><span class="blue-white-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span></div>
+                    <div class="news-card-title"><i class="fas fa-tv"></i> <span class="cyber-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span></div>
+                    <div class="news-card-desc"><span class="cyber-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- بەشی پۆستە ڕۆژانەکان -->
+        <!-- Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="extra-title">
+                <i class="fas fa-comments"></i> 
+                <span class="cyber-ad-text" style="font-size: 15px;">بۆچوون و ڕای کڕیاران (Testimonials)</span>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <span class="testimonial-name">ئارام بەردەڕەشی</span>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!"
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <span class="testimonial-name">محەمەد ئەمین</span>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "ئەکاونتی فەیسبوکەکەم هاک کرابوو، سوپاس بۆ توانا و خێرایی کارکردنت لە ماوەیەکی کەمدا بۆت گەڕاندمەوە."
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <span class="testimonial-name">بەختیار هەورامی</span>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "باشترین خزمەتگوزاری بۆ چاککردنەوەی مۆبایل و دروستکردنی ئەپل ئایدی بە نرخێکی گونجاو. دەستت خۆش بێت."
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <div class="extra-title">
+                <i class="fas fa-question-circle"></i> 
+                <span class="cyber-ad-text" style="font-size: 15px;">پرسیارە دووبارەبووەکەکان (FAQ)</span>
+            </div>
+
+            <div class="faq-card" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>چۆن دەتوانم ئەکاونتی فەیسبوک یان سناپچاتم بگێڕمەوە؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانمانەوە بە زووترین کات دەگەڕێندرێتەوە.
+                </div>
+            </div>
+
+            <div class="faq-card" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>نرخی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش چەندە؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    بە گوێرەی شوێن و کەرەستەکان بە باشترین نرخ پێشکەش دەکرێت.
+                </div>
+            </div>
+
+            <div class="faq-card" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>ئایا کاتی دروستکردنی ئەپل ئایدی و جیمیل چەند دەخایەنێت؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    تەنها چەند خولەکێک بە شێوەیەکی زامنکراو.
+                </div>
+            </div>
+        </div>
+
         <div class="posts-section">
             <div class="posts-title">
                 <i class="fas fa-bullhorn"></i> 
-                <span class="blue-white-ad-text" style="font-size: 15px;">پۆست و نوێکارییە ڕۆژانەکان</span>
+                <span class="cyber-ad-text" style="font-size: 15px;">پۆست و نوێکارییە ڕۆژانەکان</span>
             </div>
             <div class="post-card">
                 <div class="post-date">ڕۆژانە | بڵاوکراوەی نوێ</div>
@@ -1131,11 +1450,10 @@
             </div>
         </div>
 
-        <!-- بەشی ناردنی نامە (Formspree Integration) -->
         <div class="email-section">
             <div class="posts-title" style="margin-bottom: 12px;">
                 <i class="fas fa-envelope"></i> 
-                <span class="blue-white-ad-text" style="font-size: 15px;">ناردنی نامە یان ئیمیل</span>
+                <span class="cyber-ad-text" style="font-size: 15px;">ناردنی نامە یان ئیمیل</span>
             </div>
             <div class="email-card">
                 <div style="font-size: 12px; color: var(--desc-color); margin-bottom: 15px; line-height: 1.6;">
@@ -1162,7 +1480,6 @@
             </div>
         </div>
 
-        <!-- Social Media Links Section -->
         <div class="socials">
             <a href="https://www.tiktok.com/@saba_sat?_r=1&_t=ZS-98MvpZKH61P" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/share/1BYZ1ANDXa/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
@@ -1189,7 +1506,7 @@
             <a href="https://wa.me/9647507570731" target="_blank" class="floating-item wa">
                 <i class="fab fa-whatsapp fa-lg"></i> ناردنی نامە بۆ واتسئەپ
             </a>
-            <a href="tel:+9647507570731" class="floating-item call">
+            <a href="tel:+9647507570731" target="_blank" class="floating-item call">
                 <i class="fas fa-phone-alt fa-lg"></i> پەیوەندی تەلەفۆنی خێرا
             </a>
         </div>
@@ -1225,7 +1542,10 @@
             }
         }
 
-        // Functions for Full Report Modal Popup
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
         function openReportModal() {
             document.getElementById('reportModal').classList.add('active');
         }
@@ -1234,7 +1554,6 @@
             document.getElementById('reportModal').classList.remove('active');
         }
 
-        // Close modal when clicking outside of the content box
         document.getElementById('reportModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeReportModal();
