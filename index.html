@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ckb" dir="rtl" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,7 +129,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 12px 20px;
             background: var(--nav-bg);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
@@ -153,8 +153,8 @@
         }
         
         .logo-img {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--accent-glow);
@@ -163,7 +163,7 @@
         
         @keyframes pulse-border {
             0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-            70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
             100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
@@ -203,20 +203,46 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+        }
+
+        /* Language Selector Style */
+        .lang-select-wrapper {
+            position: relative;
+        }
+        .lang-select {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-glow);
+            padding: 5px 8px;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 11px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .lang-select:hover {
+            background: rgba(16, 185, 129, 0.3);
+            color: #fff;
+        }
+        .lang-select option {
+            background: var(--dropdown-bg);
+            color: var(--text-color);
         }
 
         .theme-toggle-btn {
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid rgba(16, 185, 129, 0.3);
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: var(--accent-glow);
             cursor: pointer;
+            font-size: 13px;
             transition: all 0.3s ease;
         }
         .theme-toggle-btn:hover {
@@ -231,13 +257,13 @@
         .menu-settings {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 8px 14px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 15px;
             color: var(--accent-glow);
-            font-size: 13px;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -261,36 +287,48 @@
             display: block;
         }
 
+        /* Compact Dropdown Menu Style - Optimized */
         .dropdown-menu {
             position: absolute;
-            top: 50px;
+            top: 45px;
             right: 0;
-            width: 300px;
+            left: auto;
+            width: 260px;
             background: var(--dropdown-bg);
             border: 1px solid rgba(16, 185, 129, 0.4);
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             display: none;
             flex-direction: column;
-            padding: 10px 0;
+            padding: 6px 0;
             z-index: 102;
-            direction: rtl;
-            max-height: 80vh;
+            max-height: 75vh;
             overflow-y: auto;
             transition: background 0.3s ease;
+            text-align: right;
         }
+        html[dir="ltr"] .dropdown-menu {
+            right: auto;
+            left: 0;
+            text-align: left;
+        }
+
         .dropdown-menu.active {
             display: flex;
         }
         .dropdown-item {
-            padding: 12px 15px;
+            padding: 7px 10px;
             color: var(--text-color);
-            font-size: 12px;
+            font-size: 11px;
+            line-height: 1.35;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: background 0.2s;
+        }
+        html[dir="ltr"] .dropdown-item {
+            flex-direction: row;
         }
         .dropdown-item:hover {
             background: rgba(16, 185, 129, 0.2);
@@ -298,9 +336,14 @@
         }
         .dropdown-item i {
             color: var(--accent-glow);
-            width: 16px;
+            width: 14px;
             text-align: center;
             flex-shrink: 0;
+            font-size: 11px;
+        }
+        .dropdown-item span {
+            font-size: 11px !important;
+            letter-spacing: 0px !important;
         }
 
         .cyber-ticker-container {
@@ -309,7 +352,6 @@
             margin: 75px auto 10px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
             overflow: hidden;
         }
         .cyber-ticker {
@@ -333,7 +375,7 @@
             align-items: center;
             gap: 5px;
             flex-shrink: 0;
-            margin-left: 10px;
+            margin: 0 10px;
         }
         .ticker-wrap {
             overflow: hidden;
@@ -348,7 +390,7 @@
             animation: marquee 22s linear infinite;
         }
         .ticker-text span {
-            margin-left: 40px;
+            margin: 0 40px;
             color: var(--accent-glow);
         }
         @keyframes marquee {
@@ -367,47 +409,46 @@
         .badge {
             background-color: rgba(16, 185, 129, 0.1);
             border: 1px solid rgba(16, 185, 129, 0.4);
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 14px;
-            margin-bottom: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
             box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 500;
             margin: 10px 0;
             color: var(--heading-color);
         }
 
         h2 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
-            margin: 5px 0 25px 0;
+            margin: 5px 0 20px 0;
             color: var(--subheading-color);
         }
 
         p.description {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.8;
             color: var(--desc-color);
             max-width: 380px;
-            margin-bottom: 35px;
-            direction: rtl;
+            margin-bottom: 30px;
         }
 
         .buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 25px;
         }
         .btn {
-            padding: 12px 22px;
-            border-radius: 25px;
-            font-size: 13px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
             font-family: inherit;
             cursor: pointer;
             display: flex;
@@ -436,18 +477,17 @@
         .cyber-tip-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .cyber-tip-card {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(3, 7, 18, 0.95));
             border: 1px solid var(--accent-glow);
-            border-radius: 14px;
-            padding: 18px 20px;
+            border-radius: 12px;
+            padding: 15px 18px;
             backdrop-filter: blur(8px);
-            text-align: right;
+            text-align: inherit;
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
             position: relative;
             overflow: hidden;
@@ -461,10 +501,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             color: var(--accent-glow);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .cyber-tip-header i {
             animation: rotate-shield 4s linear infinite;
@@ -475,23 +515,22 @@
             100% { transform: scale(1); }
         }
         .cyber-tip-text {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .extra-services-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .extra-title {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--heading-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -502,11 +541,11 @@
         .extra-card {
             background: var(--extra-card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 15px 18px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
             backdrop-filter: blur(5px);
-            text-align: right;
+            text-align: inherit;
             transition: transform 0.3s ease, background 0.3s ease;
         }
         .extra-card:hover {
@@ -515,32 +554,31 @@
             box-shadow: 0 5px 20px rgba(16, 185, 129, 0.2);
         }
         .extra-card-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             color: var(--accent-glow);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .extra-card-desc {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .news-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .news-title {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--heading-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -551,11 +589,11 @@
         .news-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             backdrop-filter: blur(5px);
-            text-align: right;
+            text-align: inherit;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .news-card:hover {
@@ -566,7 +604,7 @@
 
         .news-img-container {
             width: 100%;
-            height: 180px;
+            height: 160px;
             overflow: hidden;
             position: relative;
         }
@@ -580,13 +618,13 @@
             transform: scale(1.05);
         }
         .news-content-box {
-            padding: 15px 18px;
+            padding: 12px 15px;
         }
         .news-card-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             color: var(--accent-glow);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -596,15 +634,15 @@
             text-decoration: underline;
         }
         .news-card-desc {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
         .news-date {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--accent-glow);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             display: block;
         }
         
@@ -612,15 +650,15 @@
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid rgba(16, 185, 129, 0.3);
             color: var(--accent-glow);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 10px;
             cursor: pointer;
             font-family: inherit;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         .read-more-btn:hover {
             background: rgba(16, 185, 129, 0.3);
@@ -631,19 +669,18 @@
         .testimonials-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .testimonial-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
             backdrop-filter: blur(5px);
-            text-align: right;
+            text-align: inherit;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .testimonial-card:hover {
@@ -655,37 +692,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .testimonial-name {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             color: var(--accent-glow);
         }
         .testimonial-stars {
             color: #f59e0b;
-            font-size: 11px;
+            font-size: 10px;
         }
         .testimonial-text {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* FAQ Section Styling */
         .faq-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .faq-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
             backdrop-filter: blur(5px);
             overflow: hidden;
             transition: border-color 0.3s ease;
@@ -694,8 +730,8 @@
             border-color: rgba(16, 185, 129, 0.8);
         }
         .faq-question {
-            padding: 15px 18px;
-            font-size: 13px;
+            padding: 12px 15px;
+            font-size: 12px;
             font-weight: bold;
             color: var(--accent-glow);
             display: flex;
@@ -707,22 +743,22 @@
         }
         .faq-question i {
             transition: transform 0.3s ease;
-            font-size: 11px;
+            font-size: 10px;
         }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            padding: 0 18px;
-            font-size: 12px;
+            padding: 0 15px;
+            font-size: 11px;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
             transition: max-height 0.3s ease, padding 0.3s ease;
             background: rgba(3, 7, 18, 0.3);
             border-top: 1px solid transparent;
         }
         .faq-card.active .faq-answer {
             max-height: 150px;
-            padding: 12px 18px 15px 18px;
+            padding: 10px 15px 12px 15px;
             border-top-color: rgba(16, 185, 129, 0.15);
         }
         .faq-card.active .faq-question i {
@@ -743,7 +779,6 @@
             z-index: 2000;
             padding: 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .report-modal-overlay.active {
             display: flex;
@@ -751,14 +786,14 @@
         .report-modal-content {
             background: var(--popup-bg);
             border: 1px solid rgba(16, 185, 129, 0.5);
-            border-radius: 16px;
+            border-radius: 14px;
             width: 100%;
-            max-width: 600px;
+            max-width: 550px;
             max-height: 85vh;
             overflow-y: auto;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            text-align: right;
+            text-align: inherit;
             position: relative;
             animation: modal-appear 0.3s ease;
         }
@@ -768,13 +803,13 @@
         }
         .report-close-btn {
             position: absolute;
-            top: 15px;
-            left: 15px;
+            top: 12px;
+            left: 12px;
             background: rgba(255, 0, 0, 0.2);
             border: 1px solid rgba(255, 0, 0, 0.4);
             color: #ff4d4d;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -787,68 +822,67 @@
             color: #fff;
         }
         .report-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             color: var(--accent-glow);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
-            gap: 10px;
-            line-height: 1.5;
+            gap: 8px;
+            line-height: 1.4;
         }
         .report-subtitle {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--accent-glow);
-            margin-bottom: 20px;
-            line-height: 1.6;
+            margin-bottom: 15px;
+            line-height: 1.5;
             background: rgba(16, 185, 129, 0.08);
-            padding: 10px 14px;
-            border-radius: 8px;
-            border-right: 3px solid var(--accent-glow);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-inline-start: 3px solid var(--accent-glow);
         }
         .report-section-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             color: var(--heading-color);
-            margin: 20px 0 10px 0;
+            margin: 15px 0 8px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         .report-section-title i {
             color: var(--accent-glow);
         }
         .report-text {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 12px;
+            line-height: 1.7;
+            margin-bottom: 10px;
         }
         .report-list {
-            margin: 8px 0 15px 0;
-            padding-right: 20px;
-            font-size: 12px;
+            margin: 6px 0 12px 0;
+            padding-inline-start: 18px;
+            font-size: 11px;
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 1.7;
         }
         .report-list li {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .posts-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .posts-title {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--heading-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -859,65 +893,64 @@
         .post-card {
             background: var(--card-solid);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
             backdrop-filter: blur(5px);
-            text-align: right;
+            text-align: inherit;
             transition: background 0.3s ease;
         }
         .post-date {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--accent-glow);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .post-content {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .email-section {
             width: 100%;
             max-width: 450px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 30px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            direction: rtl;
         }
         .email-card {
             background: var(--email-card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 15px;
             backdrop-filter: blur(5px);
-            text-align: right;
+            text-align: inherit;
             transition: background 0.3s ease;
         }
         .email-form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 12px;
         }
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            text-align: right;
+            gap: 4px;
+            text-align: inherit;
         }
         .form-group label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--accent-glow);
         }
         .form-control {
             background: var(--input-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 10px 12px;
+            border-radius: 6px;
+            padding: 8px 10px;
             color: var(--text-color);
             font-family: 'Fira Code', monospace;
-            font-size: 12px;
+            font-size: 11px;
             outline: none;
             transition: border-color 0.3s, background 0.3s;
         }
@@ -927,24 +960,24 @@
         }
         textarea.form-control {
             resize: vertical;
-            min-height: 90px;
+            min-height: 80px;
         }
         .btn-send {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             border: none;
-            border-radius: 8px;
-            padding: 12px;
+            border-radius: 6px;
+            padding: 10px;
             font-family: 'Fira Code', monospace;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: opacity 0.3s, transform 0.2s;
-            margin-top: 5px;
+            margin-top: 4px;
         }
         .btn-send:hover {
             opacity: 0.9;
@@ -953,17 +986,17 @@
 
         .socials {
             display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 12px;
+            margin-bottom: 30px;
         }
         .social-icon {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 16px;
             text-decoration: none;
             color: white;
             background-color: transparent;
@@ -983,15 +1016,14 @@
 
         .floating-widget-container {
             position: fixed;
-            bottom: 25px;
-            left: 25px;
+            bottom: 20px;
+            right: 20px;
             z-index: 1000;
-            direction: rtl;
         }
 
         .floating-main-btn {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
@@ -1000,7 +1032,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 22px;
+            font-size: 20px;
             cursor: pointer;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
             animation: float-pulse 2s infinite;
@@ -1019,18 +1051,19 @@
 
         .floating-popup {
             position: absolute;
-            bottom: 75px;
-            left: 0;
-            width: 240px;
+            bottom: 65px;
+            right: 0;
+            left: auto;
+            width: 220px;
             background: var(--popup-bg);
             border: 1px solid rgba(16, 185, 129, 0.4);
-            border-radius: 15px;
-            padding: 12px;
+            border-radius: 12px;
+            padding: 10px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
             display: none;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             opacity: 0;
             transform: translateY(15px);
             transition: all 0.3s ease;
@@ -1043,26 +1076,26 @@
         }
 
         .floating-popup-title {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--accent-glow);
-            padding: 4px 8px;
+            padding: 4px 6px;
             border-bottom: 1px solid rgba(16, 185, 129, 0.2);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .floating-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: 10px;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 8px;
             text-decoration: none;
             color: var(--text-color);
-            font-size: 12px;
+            font-size: 11px;
             background: rgba(16, 185, 129, 0.08);
             transition: all 0.2s ease;
         }
@@ -1082,15 +1115,15 @@
             flex-direction: column;
             align-items: center;
             color: var(--accent-glow);
-            font-size: 13px;
-            gap: 8px;
+            font-size: 12px;
+            gap: 6px;
             animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
         }
     </style>
 </head>
@@ -1108,87 +1141,69 @@
                 <i class="fas fa-times"></i>
             </div>
             <div class="report-title">
-                <i class="fas fa-shield-alt"></i> هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟
+                <i class="fas fa-shield-alt"></i> <span data-i18n="reportModalTitle">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
             </div>
-            <div class="report-subtitle">
+            <div class="report-subtitle" data-i18n="reportModalSub">
                 ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان.
             </div>
 
             <div class="report-section-title">
-                <i class="fas fa-lock"></i> یەکەم: چۆنیەتی چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication - 2FA)
+                <i class="fas fa-lock"></i> <span data-i18n="repSec1Title">یەکەم: چۆنیەتی چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication - 2FA)</span>
             </div>
-            <div class="report-text">
+            <div class="report-text" data-i18n="repSec1Desc">
                 ئەمە قەڵای سەرەکییە بۆ پاراستنی ئەکاونتەکانت (وەک تیلیگرام، واتسئەپ، ئینستاگرام، ئیمەیڵ، و فەیسبووک). تەنانەت ئەگەر کەسێک وشەی تێپەڕی (Password) ئەکاونتەکەشت بزانێت، بەبێ ئەم هەنگاوە ناتوانێت بچێتە ژوورەوە.
             </div>
-            <div class="report-text"><strong>بۆچی گرنگە؟</strong> هۆکارێکە بۆ ئەوەی دڵنیابیتەوە کە تەنها خۆت دەتوانیت بچیتە ناو ئەکاونتەکەتەوە، تەنانەت لە ئەگەری دزەپێکردنی وشەی نهێنیشت.</div>
-            <div class="report-text"><strong>چۆنیەتی چالاککردن:</strong></div>
+            <div class="report-section-title" style="font-size: 12px;"><i class="fas fa-shield-alt"></i> <span data-i18n="repSecSteps">چۆنیەتی چالاککردن و ڕێنماییەکان:</span></div>
             <ul class="report-list">
-                <li>بچۆرە بەشی ڕێکخستنی ئەکاونتەکەت (Settings).</li>
-                <li>بگەڕێ بە دوای بژاردەی ئاسایش (Security & Privacy).</li>
-                <li>سەردانی بەشی پشتڕاستکردنەوەی دوو هەنگاوی بکە (Two-Step Verification) و چالاکی بکە.</li>
-                <li>باشترە ئەپڵیکەیشنی تایبەت بە پشتڕاستکردنەوە (Authenticator App) وەک Google Authenticator یان 2FAS بەکاربێنیت لەبەر ئەوەی لە نامەی کورتەیاسا (SMS) زۆر سەلامەتترە.</li>
-            </ul>
-
-            <div class="report-section-title">
-                <i class="fas fa-fish"></i> دووەم: خۆپاراستن لە لینکە فێڵبازەکان و تاوانی فیشینگ (Phishing)
-            </div>
-            <div class="report-text">
-                فیشینگ بریتییە لە ناردنی پەیوەندی، نامە، یان دروستکردنی ماڵپەڕی ساختە کە وەکو کۆمپانیا یان دامەزراوەی فەرمی (وەک بانگەکان، سۆشیال میدیا) دەردەکەون بۆ دزینی زانیارییەکانت.
-            </div>
-            <div class="report-text"><strong>نیشانەکانی لینکە گوماناوییەکان:</strong></div>
-            <ul class="report-list">
-                <li>بوونی هەڵەی ڕێنووسی یان ناوی دۆمەینی نائاسایی (بۆ نموونە: گۆڕینی پیتێک لە ناوی ماڵپەڕە فەرمییەکاندا).</li>
-                <li>داواکردنی بەپەلە بۆ پێدانی زانیاری کەسی یان وشەی تێپەڕ (Password).</li>
-                <li>بەڵێن دانی خەڵات یان پارەی خەیاڵی بەبێ هیچ هۆکارێک.</li>
-            </ul>
-            <div class="report-text"><strong>چۆن خۆت دەپارێزیت؟</strong></div>
-            <ul class="report-list">
-                <li>هەرگیز هۆشی خۆت لەدەست مەدە و پێش کرتەکردن (Click) لەسەر هەر لینکێک، ناوی تەواوی ماڵپەڕەکە لە سەرەوە پشکنین بکە.</li>
-                <li>لە ڕێگەی لینکی ناتەواو یان نەناسراوەوە نەچیتە ناو ئەکاونتەکانتەوە.</li>
-                <li>هیچ کاتێک کۆدی پشتڕاستکردنەوە (OTP) یان وشەی نهێنی بە هیچ کەسێک مەدە، تەنانەت ئەگەر خۆیان بە کارمەندی پشتگیری تەکنیکی ناساند.</li>
-            </ul>
-
-            <div class="report-section-title">
-                <i class="fas fa-shield-alt"></i> سێیەم: ڕێنمایی زێڕین بۆ ئاسایشی گشتی مۆبایل و ئەکاونتەکانت
-            </div>
-            <ul class="report-list">
-                <li><strong>وشەی تێپەڕی بەهێز و جیاواز:</strong> بۆ هەر ئەکاونتێک وشەیەکی نهێنی جیاواز بەکاربهێنە کە پێکبێت لە پیت و ژمارە و هێمای ئاڵۆز.</li>
-                <li><strong>نوێکردنەوەی بەردەوام (Updates):</strong> سیستەمی مۆبایلەکەت و ئەپڵیکەیشنەکان هەمیشە بۆ دووەمین وەشان نوێبکەرەوە، چونکە کۆمپانیاکان کون و ڕمبوونی ئەمنی لە ڕێگەی نوێکردنەوەوە چارەسەر دەکەن.</li>
-                <li><strong>ئەپی نەناسراو دابەزێنە:</strong> تەنها لە مارکێتە فەرمییەکانەوە (Google Play Store و Apple App Store) بەرنامە دابەزێنە و مۆڵەتی نەگونجاو مەدە بە هیچ ئەپێک.</li>
+                <li data-i18n="repLi1">بچۆرە بەشی ڕێکخستنی ئەکاونتەکەت (Settings).</li>
+                <li data-i18n="repLi2">بگەڕێ بە دوای بژاردەی ئاسایش (Security & Privacy).</li>
+                <li data-i18n="repLi3">سەردانی بەشی پشتڕاستکردنەوەی دوو هەنگاوی بکە (Two-Step Verification) و چالاکی بکە.</li>
+                <li data-i18n="repLi4">وشەی تێپەڕی بەهێز و جیاواز بەکاربهێنە بۆ هەر ئەکاونتێک.</li>
             </ul>
         </div>
     </div>
 
     <!-- Navigation Bar -->
     <nav>
-        <div class="nav-left">
-            <div class="logo-container">
-                <img src="1785164280697.png" alt="Sabah Sat Logo" class="logo-img">
-                <div class="red-ad-text" style="font-size: 16px;">Sabah Sat</div>
-            </div>
-        </div>
-
+        <!-- لای دەستە ڕاستی توند: دوگمەی سێتینگ، و بژاردەکانی تری ناو سێتینگ (زمان و دۆخی تاریک/ڕۆشنایی) -->
         <div class="nav-actions">
+            <div class="menu-container">
+                <div class="menu-settings" onclick="toggleMenu()">
+                    <i class="fas fa-sliders-h"></i>
+                    <span data-i18n="settingsBtn">سێتینگ</span>
+                </div>
+                
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-mobile-alt"></i> <span data-i18n="navMob">چاککردنەوەی مۆبایل</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-satellite-dish"></i> <span data-i18n="navSat">سیستەمی سەتەلایت</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> <span class="cyber-ad-text" data-i18n="navSatVillages">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-shield-alt"></i> <span class="cyber-ad-text" data-i18n="navRecover">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-plus"></i> <span class="cyber-ad-text" data-i18n="navAcc">دروستکردنی جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چاتی نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-exchange-alt"></i> <span class="cyber-ad-text" data-i18n="navFood">نەقل کردن و زیادکردنی منداڵ بۆ فۆرمی خۆراک</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-friends"></i> <span class="cyber-ad-text" data-i18n="navNewCouple">جیاکردنەوەی هاوسەری نوێ</span></a>
+                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span class="cyber-ad-text" data-i18n="navHajj">پڕکردنەوەی فۆرمی حەج</span></a>
+                </div>
+            </div>
+
             <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="گۆڕینی دۆخی ڕووناک/تاریک">
                 <i class="fas fa-moon" id="themeIcon"></i>
             </button>
 
-            <div class="menu-container">
-                <div class="menu-settings" onclick="toggleMenu()">
-                    <i class="fas fa-sliders-h"></i>
-                    <span>سێتینگ</span>
-                </div>
-                
-                <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-mobile-alt"></i> چاککردنەوەی مۆبایل</a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-satellite-dish"></i> سیستەمی سەتەلایت</a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-shield-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-plus"></i> <span class="cyber-ad-text" style="font-size: 10px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-exchange-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">نەقل کردن و زیادکردنی منداڵ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-user-friends"></i> <span class="cyber-ad-text" style="font-size: 11px;">جیاکردنەوەی هاوسەری نوێ</span></a>
-                    <a href="#servicesSection" class="dropdown-item" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span class="cyber-ad-text" style="font-size: 11px;">پڕکردنەوەی فۆرمی حەج</span></a>
-                </div>
+            <!-- Language Selector -->
+            <div class="lang-select-wrapper">
+                <select id="langSelector" class="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="ckb">کوردی</option>
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- لای دەستە چەپی توند: لۆگۆ و ناوەکە -->
+        <div class="nav-left">
+            <div class="logo-container">
+                <img src="1785164280697.png" alt="Sabah Sat Logo" class="logo-img">
+                <div class="red-ad-text" style="font-size: 15px;">Sabah Sat</div>
             </div>
         </div>
     </nav>
@@ -1197,11 +1212,11 @@
     <div class="cyber-ticker-container">
         <div class="cyber-ticker">
             <div class="ticker-badge">
-                <i class="fas fa-bolt"></i> ئاگاداری:
+                <i class="fas fa-bolt"></i> <span data-i18n="noticeTitle">ئاگاداری:</span>
             </div>
             <div class="ticker-wrap">
                 <div class="ticker-text">
-                    بەخێر هاتن بۆ ماڵپەڕی رسمی <span>Sabah Sat</span> خزمەتگوزاری خێرا بۆ چاککردنەوەی مۆبایل و بەستنی سەتەلایت <span>هەرگیز کۆدی OTP مەدە بە هیچ کەسێک!</span> پێشکەشکردنی باشترین خزمەتگوزاری سایبەری و گشتی لە بەردەڕەش و دەوروبەری.
+                    <span data-i18n="ticker1">بەخێر هاتن بۆ ماڵپەڕی رسمی Sabah Sat خزمەتگوزاری خێرا بۆ چاککردنەوەی مۆبایل و بەستنی سەتەلایت</span> <span><b data-i18n="tickerAlert">هەرگیز کۆدی OTP مەدە بە هیچ کەسێک!</b></span> <span data-i18n="ticker2">پێشکەشکردنی باشترین خزمەتگوزاری سایبەری و گشتی لە بەردەڕەش و دەوروبەری.</span>
                 </div>
             </div>
         </div>
@@ -1210,17 +1225,17 @@
     <!-- Main Hero Section -->
     <div class="hero">
         <div class="badge">
-            <span class="cyber-ad-text">پەخش و سیستەمی سایبەری</span>
+            <span class="cyber-ad-text" data-i18n="heroBadge">پەخش و سیستەمی سایبەری</span>
         </div>
 
-        <h1>Hi, I'm <span class="red-ad-text" style="font-size: 26px;">Sabah Sat</span></h1>
+        <h1 style="display: none;"></h1>
         
         <h2>
-            <span class="cyber-ad-text" style="font-size: 18px;">کاری موبایل و سەتەلایت & ئاسایشی سایبەری</span>
+            <span class="cyber-ad-text" style="font-size: 16px;" data-i18n="heroSub">کاری موبایل و سەتەلایت & ئاسایشی سایبەری</span>
         </h2>
 
         <p class="description">
-            <span class="red-ad-text" style="font-size: 14px;">Sabah Sat</span> - <span class="cyber-ad-text" style="font-size: 14px;">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.</span>
+            <span class="red-ad-text" style="font-size: 13px;">Sabah Sat</span> - <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="heroDesc">پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.</span>
         </p>
 
         <!-- Cyber Tip Section -->
@@ -1228,10 +1243,10 @@
             <div class="cyber-tip-card">
                 <div class="cyber-tip-header">
                     <i class="fas fa-shield-alt"></i>
-                    <span>ئامۆژگاری سایبەری ڕۆژانە (Cyber Tip of the Day)</span>
+                    <span data-i18n="tipHeader">ئامۆژگاری سایبەری ڕۆژانە (Cyber Tip of the Day)</span>
                 </div>
                 <div class="cyber-tip-text">
-                    <strong>ئامۆژگاری:</strong> هیچ کاتێک کۆدی پشتڕاستکردنەوەی (OTP) تەلەگرام یان واتسئەپەکەت مەدە بە هیچ کەسێک، تەنانەت ئەگەر وای پیشان بدەن کە هاوڕێ یان کارمەندی کۆمپانیان.
+                    <strong data-i18n="tipStrong">ئامۆژگاری:</strong> <span data-i18n="tipContent">هیچ کاتێک کۆدی پشتڕاستکردنەوەی (OTP) تەلەگرام یان واتسئەپەکەت مەدە بە هیچ کەسێک، تەنانەت ئەگەر وای پیشان بدەن کە هاوڕێ یان کارمەندی کۆمپانیان.</span>
                 </div>
             </div>
         </div>
@@ -1239,25 +1254,25 @@
         <div class="buttons">
             <a href="tel:+9647507570731" class="btn btn-contact">
                 <i class="fas fa-phone" style="color: #ff4d4d;"></i> 
-                <span class="red-ad-text" style="font-size: 13px;">پەیوەندیکردن</span>
+                <span class="red-ad-text" style="font-size: 12px;" data-i18n="btnCall">پەیوەندیکردن</span>
             </a>
             <a href="#servicesSection" class="btn btn-project">
-                <i class="fas fa-shield-alt"></i> خزمەتگوزارییەکان
+                <i class="fas fa-shield-alt"></i> <span data-i18n="btnServices">خزمەتگوزارییەکان</span>
             </a>
         </div>
 
         <!-- Services Section -->
         <div class="extra-services-section" id="servicesSection">
             <div class="extra-title">
-                <i class="fas fa-concierge-bell"></i> <span class="cyber-ad-text" style="font-size: 15px;">خزمەتگوزارییە گشتییەکان</span>
+                <i class="fas fa-concierge-bell"></i> <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="secGeneralTitle">خزمەتگوزارییە گشتییەکان</span>
             </div>
 
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-satellite-dish"></i> 
-                    <span class="cyber-ad-text" style="font-size: 14px;">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="srv1Title">ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری</span>
                 </div>
-                <div class="extra-card-desc">
+                <div class="extra-card-desc" data-i18n="srv1Desc">
                     خزمەتگوزاری خێرا و پیشەگەر بۆ دانان، ڕێکخستن و بەستنی سیستەمی سەتەلایت و دیش لە سەرجەم گوندەکان و ناوچەکانی بەردەڕەش و دەوروبەری بە باشترین کوالێتی.
                 </div>
             </div>
@@ -1265,9 +1280,9 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-unlock-alt"></i> 
-                    <span class="cyber-ad-text" style="font-size: 14px;">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="srv2Title">هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
                 </div>
-                <div class="extra-card-desc">
+                <div class="extra-card-desc" data-i18n="srv2Desc">
                     گەڕاندنەوەی ئەکاونتە هاککراو، گیراو یان لەدەستچووەکان بە زووترین کات و بە پارێزراوی تەواو بۆ هاوڵاتییانی خۆشەویست.
                 </div>
             </div>
@@ -1275,19 +1290,19 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-envelope-open-text"></i> 
-                    <span class="cyber-ad-text" style="font-size: 13px;">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span>
+                    <span class="cyber-ad-text" style="font-size: 12px;" data-i18n="srv3Title">ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ</span>
                 </div>
-                <div class="extra-card-desc">
-                    ئامادەین بۆ دروستکردن و دامەزراندنی هەژماری فەرمی و نوێ (جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چات) بە شێوازێکی زامنکراو، پارێزراو و بە ڕەچاوکردنی تەواوی مەرجەکانی ئاسایش بۆ مۆبایلەکەت.
+                <div class="extra-card-desc" data-i18n="srv3Desc">
+                    ئامادەین بۆ دروستکردن و دامەزراندنی هەژماری فەرمی و نوێ (جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چات) بە شێوازێکی زامنکراو، پارێزراو.
                 </div>
             </div>
 
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-child"></i> 
-                    <span class="cyber-ad-text" style="font-size: 14px;">نەقل کردن و زیادکردنی منداڵ</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="srv4Title">نەقل کردن و زیادکردنی منداڵ</span>
                 </div>
-                <div class="extra-card-desc">
+                <div class="extra-card-desc" data-i18n="srv4Desc">
                     ئەنجامدانی مامەڵەی گواستنەوەی (نەقل کردن) و زیادکردنی ناوی منداڵ بۆ سەر فۆرمی خۆراک بە شێوەیەکی ورد و دروست.
                 </div>
             </div>
@@ -1295,9 +1310,9 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-user-plus"></i> 
-                    <span class="cyber-ad-text" style="font-size: 14px;">جیاکردنەوەی هاوسەری نوێ</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="srv5Title">جیاکردنەوەی هاوسەری نوێ</span>
                 </div>
-                <div class="extra-card-desc">
+                <div class="extra-card-desc" data-i18n="srv5Desc">
                     ئامادەکاریکردن و جیاکردنەوەی فۆرمی خۆراک بۆ هاوسەرانی نوێ بە هەموو ڕێکارە یاسایی و کارگێڕییە پێویستەکانەوە.
                 </div>
             </div>
@@ -1305,69 +1320,10 @@
             <div class="extra-card">
                 <div class="extra-card-title">
                     <i class="fas fa-kaaba"></i> 
-                    <span class="cyber-ad-text" style="font-size: 14px;">پڕکردنەوەی فۆرمی حەج</span>
+                    <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="srv6Title">پڕکردنەوەی فۆرمی حەج</span>
                 </div>
-                <div class="extra-card-desc">
+                <div class="extra-card-desc" data-i18n="srv6Desc">
                     ئامادەین بۆ پڕکردنەوەی ورد و دروستی فۆرمی حەج بۆ هاوڵاتییانی خۆشەویست.
-                </div>
-            </div>
-        </div>
-
-        <!-- Gallery / Portfolio Section -->
-        <div class="gallery-section" id="gallerySection" style="width: 100%; max-width: 450px; margin: 0 auto 30px auto; padding: 0 20px; box-sizing: border-box; direction: rtl;">
-            <div class="extra-title">
-                <i class="fas fa-images"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">نموونەی کارە مەیدانییەکان (Gallery)</span>
-            </div>
-
-            <!-- نموونەی یەکەم: بەستنی سەتەلایت -->
-            <div class="news-card">
-                <div class="news-img-container" style="height: 190px;">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Satellite Setup" loading="lazy">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">بەستنی سیستەمی سەتەلایت لە گوندەکان</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-satellite-dish"></i> 
-                        <span class="cyber-ad-text" style="font-size: 14px;">دانان و ڕێکخستنی دیش و سەتەلایت لە ناوچەکانی بەردەڕەش</span>
-                    </div>
-                    <div class="news-card-desc">
-                        نموونەیەک لە کارە مەیدانییەکانمان بۆ دانان و ڕێکخستنی سیستەمی کەناڵەکان بە کوالێتی بەرز و بێ پچڕان لە گوندەکانی دەوروبەری بەردەڕەش.
-                    </div>
-                </div>
-            </div>
-
-            <!-- نموونەی دووەم: چاککردنەوەی مۆبایل -->
-            <div class="news-card">
-                <div class="news-img-container" style="height: 190px;">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Mobile Maintenance" loading="lazy">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">چاککردنەوە و چارەسەری نەرمامێری</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-mobile-alt"></i> 
-                        <span class="cyber-ad-text" style="font-size: 14px;">چارەسەرکردنی کێشە تەکنیکییەکانی مۆبایل</span>
-                    </div>
-                    <div class="news-card-desc">
-                        چارەسەرکردنی کێشە توند و دەگمەنەکانی مۆبایل، دابەزاندنی نەرمامێری نوێ و چارەسەرکردنی کێشەی پاتری و شاشە.
-                    </div>
-                </div>
-            </div>
-
-            <!-- نموونەی سێیەم: ئاسایشی سایبەری و گەڕاندنەوەی ئەکاونت -->
-            <div class="news-card">
-                <div class="news-img-container" style="height: 190px;">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber Security" loading="lazy">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">ئاسایشی دیجیتالی و سۆشیال میدیا</span>
-                    <div class="news-card-title">
-                        <i class="fas fa-shield-alt"></i> 
-                        <span class="cyber-ad-text" style="font-size: 14px;">گەڕاندنەوەی فەیسبوک، تیک تۆک و سناپ چات</span>
-                    </div>
-                    <div class="news-card-desc">
-                        گەڕاندنەوەی هەژمارە هاککراو یان لەدەستچووەکان و پاراستنیان بە چالاککردنی سەلامەتی دوو هەنگاوی (2FA) بۆ ڕێگریکردن لە هاککردنی داهاتوو.
-                    </div>
                 </div>
             </div>
         </div>
@@ -1376,7 +1332,7 @@
         <div class="news-section" id="newsSection">
             <div class="news-title">
                 <i class="fas fa-fire"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
+                <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="newsSecTitle">هەواڵ و بابەتی جیاواز و سەرنجڕاکێش</span>
             </div>
 
             <div class="news-card">
@@ -1384,28 +1340,17 @@
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cyber Security" loading="lazy">
                 </div>
                 <div class="news-content-box">
-                    <span class="news-date">تەکنەلۆژیا و ئاسایشی سایبەری</span>
+                    <span class="news-date" data-i18n="news1Date">تەکنەلۆژیا و ئاسایشی سایبەری</span>
                     <div class="news-card-title" onclick="openReportModal()">
                         <i class="fas fa-shield-alt"></i> 
-                        <span class="cyber-ad-text" style="font-size: 14px;">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
+                        <span class="cyber-ad-text" style="font-size: 13px;" data-i18n="news1Title">هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟</span>
                     </div>
-                    <div class="news-card-desc">
+                    <div class="news-card-desc" data-i18n="news1Desc">
                         ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان. بۆ خوێندنەوەی ڕاپۆرتی تەواو و وردەکارییەکانی کرتە بکە.
                     </div>
                     <button class="read-more-btn" onclick="openReportModal()">
-                        <i class="fas fa-book-open"></i> خوێندنەوەی ڕاپۆرتی تەواو
+                        <i class="fas fa-book-open"></i> <span data-i18n="readMoreBtn">خوێندنەوەی ڕاپۆرتی تەواو</span>
                     </button>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Sports" loading="lazy">
-                </div>
-                <div class="news-content-box">
-                    <span class="news-date">کەناڵە وەرزشییەکان و یارییەکان</span>
-                    <div class="news-card-title"><i class="fas fa-tv"></i> <span class="cyber-ad-text" style="font-size: 14px;">دەتەوێت سەیری کەناڵە وەرزشییەکان بکەیت؟ گەر دەتەوێت MyTv+ بەکاربێنە!</span></div>
-                    <div class="news-card-desc"><span class="cyber-ad-text" style="font-size: 13px;">بە باشترین کوالێتی و بێ پچڕان، سەرجەم یارییە جیهانییەکان و کەناڵە وەرزشییەکان لە ڕێگەی ئەپلیکەیشنی MyTv+ ڕاستەوخۆ لە مۆبایل و شاشەکەتەوە ببینە.</span></div>
                 </div>
             </div>
         </div>
@@ -1414,55 +1359,15 @@
         <div class="testimonials-section">
             <div class="extra-title">
                 <i class="fas fa-comments"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">بۆچوون و ڕای کڕیاران (Testimonials)</span>
+                <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="testTitle">بۆچوون و ڕای کڕیاران (Testimonials)</span>
             </div>
 
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <span class="testimonial-name">ئارام بەردەڕەشی</span>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+                    <span class="testimonial-name" data-i18n="t1Name">ئارام بەردەڕەشی</span>
+                    <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 </div>
-                <div class="testimonial-text">
-                    "دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!"
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <span class="testimonial-name">محەمەد ئەمین</span>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text">
-                    "ئەکاونتی فەیسبوکەکەم هاک کرابوو، سوپاس بۆ توانا و خێرایی کارکردنت لە ماوەیەکی کەمدا بۆت گەڕاندمەوە."
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <span class="testimonial-name">بەختیار هەورامی</span>
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text">
-                    "باشترین خزمەتگوزاری بۆ چاککردنەوەی مۆبایل و دروستکردنی ئەپل ئایدی بە نرخێکی گونجاو. دەستت خۆش بێت."
-                </div>
+                <div class="testimonial-text" data-i18n="t1Text">"دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!"</div>
             </div>
         </div>
 
@@ -1470,80 +1375,46 @@
         <div class="faq-section">
             <div class="extra-title">
                 <i class="fas fa-question-circle"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">پرسیارە دووبارەبووەکەکان (FAQ)</span>
+                <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="faqTitle">پرسیارە دووبارەبووەکەکان (FAQ)</span>
             </div>
 
             <div class="faq-card" onclick="toggleFaq(this)">
                 <div class="faq-question">
-                    <span>چۆن دەتوانم ئەکاونتی فەیسبوک یان سناپچاتم بگێڕمەوە؟</span>
+                    <span data-i18n="faq1Q">چۆن دەتوانم ئەکاونتی فەیسبوک یان سناپچاتم بگێڕمەوە؟</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-i18n="faq1A">
                     لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانمانەوە بە زووترین کات دەگەڕێندرێتەوە.
-                </div>
-            </div>
-
-            <div class="faq-card" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>نرخی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش چەندە؟</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    بە گوێرەی شوێن و کەرەستەکان بە باشترین نرخ پێشکەش دەکرێت.
-                </div>
-            </div>
-
-            <div class="faq-card" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>ئایا کاتی دروستکردنی ئەپل ئایدی و جیمیل چەند دەخایەنێت؟</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    تەنها چەند خولەکێک بە شێوەیەکی زامنکراو.
-                </div>
-            </div>
-        </div>
-
-        <!-- Posts Section -->
-        <div class="posts-section">
-            <div class="posts-title">
-                <i class="fas fa-bullhorn"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">پۆست و نوێکارییە ڕۆژانەکان</span>
-            </div>
-            <div class="post-card">
-                <div class="post-date">ڕۆژانە | بڵاوکراوەی نوێ</div>
-                <div class="post-content">
-                    ئەمڕۆ خزمەتگوزارییەکانی بەستنی سەتەلایت لە گوندەکانی بەردەڕەش و دەوروبەری، هێنانەوەی ئەکاونتەکان و سەرجەم خزمەتگوزارییە گشتییەکان بەردەستن.
                 </div>
             </div>
         </div>
 
         <!-- Email Form Section -->
         <div class="email-section">
-            <div class="posts-title" style="margin-bottom: 12px;">
+            <div class="posts-title" style="margin-bottom: 10px;">
                 <i class="fas fa-envelope"></i> 
-                <span class="cyber-ad-text" style="font-size: 15px;">ناردنی نامە یان ئیمیل</span>
+                <span class="cyber-ad-text" style="font-size: 14px;" data-i18n="emailTitle">ناردنی نامە یان ئیمیل</span>
             </div>
             <div class="email-card">
-                <div style="font-size: 12px; color: var(--desc-color); margin-bottom: 15px; line-height: 1.6;">
+                <div style="font-size: 11px; color: var(--desc-color); margin-bottom: 12px; line-height: 1.5;" data-i18n="emailDesc">
                     گەر پرسیارێک یان داواکارییەک هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە ڕاستەوخۆ نامەکەت بنێریت.
                 </div>
                 
                 <form class="email-form" action="https://formspree.io/f/xnjelwpj" method="POST">
                     <div class="form-group">
-                        <label for="name">ناوی تۆ:</label>
+                        <label for="name" data-i18n="formName">ناوی تۆ:</label>
                         <input type="text" id="name" name="Name" class="form-control" placeholder="ناوی خۆت بنووسە..." required>
                     </div>
                     <div class="form-group">
-                        <label for="email">ئیمیل یان ژمارەی پەیوەندی:</label>
+                        <label for="email" data-i18n="formContact">ئیمیل یان ژمارەی پەیوەندی:</label>
                         <input type="text" id="email" name="Contact" class="form-control" placeholder="ئیمیل یان ژمارەکەت بنووسە..." required>
                     </div>
                     <div class="form-group">
-                        <label for="message">نامەکەت:</label>
+                        <label for="message" data-i18n="formMsg">نامەکەت:</label>
                         <textarea id="message" name="Message" class="form-control" placeholder="پەیام یان داواکارییەکەت لێرە بنووسە..." required></textarea>
                     </div>
                     <button type="submit" class="btn-send">
-                        <i class="fas fa-paper-plane"></i> ناردنی نامە
+                        <i class="fas fa-paper-plane"></i> <span data-i18n="formSend">ناردنی نامە</span>
                     </button>
                 </form>
             </div>
@@ -1568,16 +1439,16 @@
     <div class="floating-widget-container">
         <div class="floating-popup" id="floatingPopup">
             <div class="floating-popup-title">
-                <i class="fas fa-headset"></i> پەیوەندی خێرا و ڕاستەوخۆ
+                <i class="fas fa-headset"></i> <span data-i18n="widgetTitle">پەیوەندی خێرا و ڕاستەوخۆ</span>
             </div>
             <a href="http://t.me/satsat0990" target="_blank" class="floating-item tg">
-                <i class="fab fa-telegram-plane fa-lg"></i> ناردنی نامە بۆ تەلەگرام
+                <i class="fab fa-telegram-plane fa-lg"></i> <span data-i18n="wTg">ناردنی نامە بۆ تەلەگرام</span>
             </a>
             <a href="https://wa.me/9647507570731" target="_blank" class="floating-item wa">
-                <i class="fab fa-whatsapp fa-lg"></i> ناردنی نامە بۆ واتسئەپ
+                <i class="fab fa-whatsapp fa-lg"></i> <span data-i18n="wWa">ناردنی نامە بۆ واتسئەپ</span>
             </a>
             <a href="tel:+9647507570731" target="_blank" class="floating-item call">
-                <i class="fas fa-phone-alt fa-lg"></i> پەیوەندی تەلەفۆنی خێرا
+                <i class="fas fa-phone-alt fa-lg"></i> <span data-i18n="wCall">پەیوەندی تەلەفۆنی خێرا</span>
             </a>
         </div>
         <button class="floating-main-btn" id="floatingMainBtn" onclick="toggleFloatingWidget()" title="پەیوەندی خێرا">
@@ -1586,6 +1457,228 @@
     </div>
 
     <script>
+        // Dictionary for Multi-language support
+        const translations = {
+            ckb: {
+                settingsBtn: "سێتینگ",
+                navMob: "چاککردنەوەی مۆبایل",
+                navSat: "سیستەمی سەتەلایت",
+                navSatVillages: "ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری",
+                navRecover: "هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات",
+                navAcc: "دروستکردنی جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چاتی نوێ",
+                navFood: "نەقل کردن و زیادکردنی منداڵ بۆ فۆرمی خۆراک",
+                navNewCouple: "جیاکردنەوەی هاوسەری نوێ",
+                navHajj: "پڕکردنەوەی فۆرمی حەج",
+                noticeTitle: "ئاگاداری:",
+                ticker1: "بەخێر هاتن بۆ ماڵپەڕی رسمی Sabah Sat خزمەتگوزاری خێرا بۆ چاککردنەوەی مۆبایل و بەستنی سەتەلایت",
+                tickerAlert: "هەرگیز کۆدی OTP مەدە بە هیچ کەسێک!",
+                ticker2: "پێشکەشکردنی باشترین خزمەتگوزاری سایبەری و گشتی لە بەردەڕەش و دەوروبەری.",
+                heroBadge: "پەخش و سیستەمی سایبەری",
+                heroSub: "کاری موبایل و سەتەلایت & ئاسایشی سایبەری",
+                heroDesc: "Sabah Sat - پێشکەشکردنی باشترین خزمەتگوزاری بۆ کاری مۆبایل، سیستەمی سەتەلایت و پاراستنی دیجیتالی.",
+                tipHeader: "ئامۆژگاری سایبەری ڕۆژانە (Cyber Tip of the Day)",
+                tipStrong: "ئامۆژگاری:",
+                tipContent: "هیچ کاتێک کۆدی پشتڕاستکردنەوەی (OTP) تەلەگرام یان واتسئەپەکەت مەدە بە هیچ کەسێک، تەنانەت ئەگەر وای پیشان بدەن کە هاوڕێ یان کارمەندی کۆمپانیان.",
+                btnCall: "پەیوەندیکردن",
+                btnServices: "خزمەتگوزارییەکان",
+                secGeneralTitle: "خزمەتگوزارییە گشتییەکان",
+                srv1Title: "ئامادەین بۆ بەستنی ستەلایت لە گوندەکانی بەردەڕەش و دەوروبەری",
+                srv1Desc: "خزمەتگوزاری خێرا و پیشەگەر بۆ دانان، ڕێکخستن و بەستنی سیستەمی سەتەلایت و دیش لە سەرجەم گوندەکان و ناوچەکانی بەردەڕەش و دەوروبەری بە باشترین کوالێتی.",
+                srv2Title: "هێنانەوەی فەیسبوک، تیک تۆک و سناپ چات",
+                srv2Desc: "گەڕاندنەوەی ئەکاونتە هاککراو، گیراو یان لەدەستچووەکان بە زووترین کات و بە پارێزراوی تەواو بۆ هاوڵاتییانی خۆشەویست.",
+                srv3Title: "ئامادەین بۆ درووست کردنی جیمیل و ئەپل ئایدی و فەیسبوکی نووی سناپ چاتی نوێ",
+                srv3Desc: "ئامادەین بۆ دروستکردن و دامەزراندنی هەژماری فەرمی و نوێ (جیمیل، ئەپل ئایدی، فەیسبوک و سناپ چات) بە شێوازێکی زامنکراو، پارێزراو.",
+                srv4Title: "نەقل کردن و زیادکردنی منداڵ",
+                srv4Desc: "ئەنجامدانی مامەڵەی گواستنەوەی (نەقل کردن) و زیادکردنی ناوی منداڵ بۆ سەر فۆرمی خۆراک بە شێوەیەکی ورد و دروست.",
+                srv5Title: "جیاکردنەوەی هاوسەری نوێ",
+                srv5Desc: "ئامادەکاریکردن و جیاکردنەوەی فۆرمی خۆراک بۆ هاوسەرانی نوێ بە هەموو ڕێکارە یاسایی و کارگێڕییە پێویستەکانەوە.",
+                srv6Title: "پڕکردنەوەی فۆرمی حەج",
+                srv6Desc: "ئامادەین بۆ پڕکردنەوەی ورد و دروستی فۆرمی حەج بۆ هاوڵاتییانی خۆشەویست.",
+                newsSecTitle: "هەواڵ و بابەتی جیاواز و سەرنجڕاکێش",
+                news1Date: "تەکنەلۆژیا و ئاسایشی سایبەری",
+                news1Title: "هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟",
+                news1Desc: "ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان. بۆ خوێندنەوەی ڕاپۆرتی تەواو و وردەکارییەکانی کرتە بکە.",
+                readMoreBtn: "خوێندنەوەی ڕاپۆرتی تەواو",
+                testTitle: "بۆچوون و ڕای کڕیاران (Testimonials)",
+                t1Name: "ئارام بەردەڕەشی",
+                t1Text: "\"دەستت خۆش بێت سابان گیان، سیستەمی سەتەلایتت بۆ بەستین زۆر پاک و بێ کێشە کار دەکات لە گوندەکەمان. سەرکەوتوو بیت!\"",
+                faqTitle: "پرسیارە دووبارەبووەکەکان (FAQ)",
+                faq1Q: "چۆن دەتوانم ئەکاونتی فەیسبوک یان سناپچاتم بگێڕمەوە?",
+                faq1A: "لە ڕێگەی پەیوەندیکردن بە ڕێنماییە ئەمنییەکانمانەوە بە زووترین کات دەگەڕێندرێتەوە.",
+                emailTitle: "ناردنی نامە یان ئیمیل",
+                emailDesc: "گەر پرسیارێک یان داواکارییەک هەبێت، دەتوانیت لە ڕێگەی ئەم فۆرمەوە ڕاستەوخۆ نامەکەت بنێریت.",
+                formName: "ناوی تۆ:",
+                formContact: "ئیمیل یان ژمارەی پەیوەندی:",
+                formMsg: "نامەکەت:",
+                formSend: "ناردنی نامە",
+                widgetTitle: "پەیوەندی خێرا و ڕاستەوخۆ",
+                wTg: "ناردنی نامە بۆ تەلەگرام",
+                wWa: "ناردنی نامە بۆ واتسئەپ",
+                wCall: "پەیوەندی تەلەفۆنی خێرا",
+                reportModalTitle: "هۆشیاری ئاسایشی سایبەری: چۆن مۆبایل و ئەکاونتەکانت لە هاککردن دەپارێزیت؟",
+                reportModalSub: "ڕێنمایی زێڕین بۆ چالاککردنی سەلامەتی دوو هەنگاوی و دوورکەوتنەوە لە لینکە فێڵبازەکان.",
+                repSec1Title: "یەکەم: چۆنیەتی چالاککردنی سەلامەتی دوو هەنگاوی (Two-Factor Authentication - 2FA)",
+                repSec1Desc: "ئەمە قەڵای سەرەکییە بۆ پاراستنی ئەکاونتەکانت (وەک تیلیگرام، واتسئەپ، ئینستاگرام، ئیمەیڵ، و فەیسبووک). تەنانەت ئەگەر کەسێک وشەی تێپەڕی (Password) ئەکاونتەکەشت بزانێت، بەبێ ئەم هەنگاوە ناتوانێت بچێتە ژوورەوە.",
+                repSecSteps: "چۆنیەتی چالاککردن و ڕێنماییەکان:",
+                repLi1: "بچۆرە بەشی ڕێکخستنی ئەکاونتەکەت (Settings).",
+                repLi2: "بگەڕێ بە دوای بژاردەی ئاسایش (Security & Privacy).",
+                repLi3: "سەردانی بەشی پشتڕاستکردنەوەی دوو هەنگاوی بکە (Two-Step Verification) و چالاکی بکە.",
+                repLi4: "وشەی تێپەڕی بەهێز و جیاواز بەکاربهێنە بۆ هەر ئەکاونتێک."
+            },
+            ar: {
+                settingsBtn: "الإعدادات",
+                navMob: "تصليح الهواتف",
+                navSat: "أنظمة الستلايت",
+                navSatVillages: "جاهزون لتركيب الستلايت في قرى بردرش وما حولها",
+                navRecover: "استرجاع حسابات الفيسبوك، تيك توك وسناب شات",
+                navAcc: "إنشاء حسابات جيميل، آبل آي دي، فيسبوك وسناب شات جديدة",
+                navFood: "نقل وإضافة الأطفال للبطاقة التموينية",
+                navNewCouple: "فصل بطاقة المتزوجين حديثاً",
+                navHajj: "ملء استمارة الحج",
+                noticeTitle: "تنبيه:",
+                ticker1: "مرحباً بكم في الموقع الرسمي لـ Sabah Sat للخدمات السريعة لتصليح الهواتف وتركيب الستلايت",
+                tickerAlert: "إياك أن تعطي رمز التحقق OTP لأي شخص!",
+                ticker2: "تقديم أفضل الخدمات السيبرانية والعامة في بردرش وما حولها.",
+                heroBadge: "البث والأنظمة السيبرانية",
+                heroSub: "خدمات الهواتف والستلايت والأمن السيبراني",
+                heroDesc: "Sabah Sat - تقديم أفضل الخدمات للهواتف، أنظمة الستلايت والحماية الرقمية.",
+                tipHeader: "النصيحة السيبرانية اليومية (Cyber Tip of the Day)",
+                tipStrong: "نصيحة:",
+                tipContent: "لا تعطِ أبداً رمز التحقق (OTP) الخاص بتليجرام أو واتساب لأي شخص، حتى لو ادعوا أنهم أصدقاء أو موظفو شركة.",
+                btnCall: "اتصل الآن",
+                btnServices: "الخدمات",
+                secGeneralTitle: "الخدمات العامة",
+                srv1Title: "جاهزون لتركيب الستلايت في قرى بردرش وما حولها",
+                srv1Desc: "خدمة سريعة واحترافية لتركيب وتعديل أنظمة الستلايت والدش في جميع قرى ومناطق بردرش بأعلى جودة.",
+                srv2Title: "استرجاع حسابات الفيسبوك، تيك توك وسناب شات",
+                srv2Desc: "استرجاع الحسابات المخترقة، المعطلة أو المفقودة بأسرع وقت وبسرية تامة.",
+                srv3Title: "إنشاء جيميل، آبل آي دي، فيسبوك وسناب شات جديدة",
+                srv3Desc: "جاهزون لإنشاء وتأسيس حسابات رسمية جديدة بطريقة آمنة ومضمونة لموبايلك.",
+                srv4Title: "نقل وإضافة الأطفال",
+                srv4Desc: "إنجاز معاملات نقل وإضافة أسماء الأطفال إلى استمارة الغذاء بدقة تامة.",
+                srv5Title: "فصل بطاقة المتزوجين حديثاً",
+                srv5Desc: "إعداد وفصل بطاقة الغذاء للمتزوجين حديثاً مع كافة الإجراءات القانونية والإدارية اللازمة.",
+                srv6Title: "ملء استمارة الحج",
+                srv6Desc: "جاهزون لملء استمارة الحج بدقة تامة للمواطنين الأعزاء.",
+                newsSecTitle: "أخبار ومواضيع متنوعة ومثيرة للاهتمام",
+                news1Date: "التكنولوجيا والأمن السيبراني",
+                news1Title: "التوعية بالأمن السيبراني: كيف تحمي هاتفك وحساباتك من الاختراق؟",
+                news1Desc: "إرشادات ذهبية لتفعيل المصادقة الثنائية وتجنب الروابط الوهمية. انقر لقراءة التقرير الكامل.",
+                readMoreBtn: "قراءة التقرير الكامل",
+                testTitle: "آراء وتقييمات العملاء (Testimonials)",
+                t1Name: "أرام بردرشي",
+                t1Text: "\"عاشت إيدك يا صباح، نظام الستلايت الذي ربطته لنا يعمل بشكل نظيف وبدون مشاكل في قريتنا. بالتوفيق!\"",
+                faqTitle: "الأسئلة الشائعة (FAQ)",
+                faq1Q: "كيف يمكنني استعادة حساب الفيسبوك أو السناب شات الخاص بي؟",
+                faq1A: "من خلال الاتصال بنا والتوجيهات الأمنية التي نقدمها، سيتم استعادته بأسرع وقت.",
+                emailTitle: "إرسال رسالة أو بريد إلكتروني",
+                emailDesc: "إذا كان لديك أي سؤال أو طلب، يمكنك إرسال رسالتك مباشرة من خلال هذا النموذج.",
+                formName: "اسمك:",
+                formContact: "البريد الإلكتروني أو رقم التواصل:",
+                formMsg: "رسالتك:",
+                formSend: "إرسال الرسالة",
+                widgetTitle: "اتصال سريع ومباشر",
+                wTg: "إرسال رسالة عبر تليجرام",
+                wWa: "إرسال رسالة عبر واتساب",
+                wCall: "اتصال هاتفي سريع",
+                reportModalTitle: "التوعية بالأمن السيبراني: كيف تحمي هاتفك وحساباتك من الاختراق؟",
+                reportModalSub: "إرشادات ذهبية لتفعيل المصادقة الثنائية وتجنب الروابط الوهمية.",
+                repSec1Title: "أولاً: كيفية تفعيل المصادقة الثنائية (Two-Factor Authentication - 2FA)",
+                repSec1Desc: "هذا هو الحصن الأساسي لحماية حساباتك (مثل تليجرام، واتساب، إنستغرام، البريد الإلكتروني، وفيسبوك). حتى لو عرف شخص ما كلمة المرور الخاصة بك، فلا يمكنه الدخول بدون هذه الخطوة.",
+                repSecSteps: "خطوات التفعيل والإرشادات:",
+                repLi1: "اذهب إلى إعدادات حسابك (Settings).",
+                repLi2: "ابحث عن خيار الأمان (Security & Privacy).",
+                repLi3: "قم بزيارة قسم التحقق بخطوتين (Two-Step Verification) وقم بتفعيله.",
+                repLi4: "استخدم كلمة مرور قوية ومختلفة لكل حساب."
+            },
+            en: {
+                settingsBtn: "Settings",
+                navMob: "Mobile Repair",
+                navSat: "Satellite Systems",
+                navSatVillages: "Satellite installation in Bardarash villages & surrounding areas",
+                navRecover: "Recover Facebook, TikTok & Snapchat",
+                navAcc: "Create new Gmail, Apple ID, Facebook & Snapchat",
+                navFood: "Transfer & Add Children to Food Form",
+                navNewCouple: "New Couple Separation Form",
+                navHajj: "Hajj Form Filling",
+                noticeTitle: "Notice:",
+                ticker1: "Welcome to the official website of Sabah Sat - Fast service for mobile repair and satellite installation",
+                tickerAlert: "Never give your OTP code to anyone!",
+                ticker2: "Providing the best cyber and general services in Bardarash and surroundings.",
+                heroBadge: "Broadcasting & Cyber Systems",
+                heroSub: "Mobile & Satellite Work & Cyber Security",
+                heroDesc: "Sabah Sat - Providing the best services for mobile work, satellite systems, and digital protection.",
+                tipHeader: "Cyber Tip of the Day",
+                tipStrong: "Tip:",
+                tipContent: "Never give your Telegram or WhatsApp OTP verification code to anyone, even if they pretend to be friends or company staff.",
+                btnCall: "Contact",
+                btnServices: "Services",
+                secGeneralTitle: "General Services",
+                srv1Title: "Satellite installation in Bardarash villages & surrounding areas",
+                srv1Desc: "Fast and professional service for setting up, adjusting, and installing satellite systems and dishes in all villages and areas of Bardarash with the best quality.",
+                srv2Title: "Recover Facebook, TikTok & Snapchat",
+                srv2Desc: "Recovering hacked, locked, or lost accounts as quickly as possible with complete security for our valued citizens.",
+                srv3Title: "Create new Gmail, Apple ID, Facebook & Snapchat",
+                srv3Desc: "Ready to create and establish official new accounts safely and securely for your mobile.",
+                srv4Title: "Transfer & Add Children",
+                srv4Desc: "Executing the process of transferring and adding children's names to the food form accurately.",
+                srv5Title: "New Couple Separation",
+                srv5Desc: "Preparing and separating food forms for newly married couples with all necessary legal and administrative procedures.",
+                srv6Title: "Hajj Form Filling",
+                srv6Desc: "Ready to accurately fill out Hajj forms for valued citizens.",
+                newsSecTitle: "News & Interesting Articles",
+                news1Date: "Technology & Cyber Security",
+                news1Title: "Cyber Security Awareness: How to Protect Your Phone and Accounts from Hacking?",
+                news1Desc: "Golden guidelines for enabling 2FA and avoiding phishing links. Click to read the full report.",
+                readMoreBtn: "Read Full Report",
+                testTitle: "Customer Reviews (Testimonials)",
+                t1Name: "Aram Bardarashi",
+                t1Text: "\"Thank you Sabah, the satellite system you installed works very clean and flawless in our village. Good luck!\"",
+                faqTitle: "Frequently Asked Questions (FAQ)",
+                faq1Q: "How can I recover my Facebook or Snapchat account?",
+                faq1A: "By contacting us and following our security guidelines, it will be restored as soon as possible.",
+                emailTitle: "Send a Message or Email",
+                emailDesc: "If you have any questions or requests, you can send your message directly through this form.",
+                formName: "Your Name:",
+                formContact: "Email or Contact Number:",
+                formMsg: "Your Message:",
+                formSend: "Send Message",
+                widgetTitle: "Fast & Direct Contact",
+                wTg: "Send message via Telegram",
+                wWa: "Send message via WhatsApp",
+                wCall: "Fast phone call",
+                reportModalTitle: "Cyber Security Awareness: How to Protect Your Phone and Accounts from Hacking?",
+                reportModalSub: "Golden guidelines for enabling 2FA and avoiding phishing links.",
+                repSec1Title: "First: How to Enable Two-Factor Authentication (2FA)",
+                repSec1Desc: "This is the main fortress to protect your accounts (like Telegram, WhatsApp, Instagram, Email, and Facebook). Even if someone knows your password, they cannot log in without this step.",
+                repSecSteps: "Activation Steps and Guidelines:",
+                repLi1: "Go to your account settings (Settings).",
+                repLi2: "Look for Security & Privacy option.",
+                repLi3: "Visit Two-Step Verification section and enable it.",
+                repLi4: "Use strong and unique passwords for each account."
+            }
+        };
+
+        function changeLanguage(lang) {
+            const htmlRoot = document.getElementById('htmlRoot');
+            if (lang === 'en') {
+                htmlRoot.setAttribute('dir', 'ltr');
+                htmlRoot.setAttribute('lang', 'en');
+            } else {
+                htmlRoot.setAttribute('dir', 'rtl');
+                htmlRoot.setAttribute('lang', lang);
+            }
+
+            // Update text elements based on data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+        }
+
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
             const overlay = document.getElementById('menuOverlay');
